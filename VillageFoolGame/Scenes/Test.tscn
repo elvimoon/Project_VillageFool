@@ -5,3 +5,5 @@
 [node name="Viewport" type="Viewport" parent="."]
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Viewport"]
+
+[node name="Timer" type="Timer" parent="Viewport"]

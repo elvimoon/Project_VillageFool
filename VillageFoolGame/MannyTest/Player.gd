@@ -10,6 +10,8 @@ const ACCEL_SPEED = 2000
 const MAX_SPEED =88
 
 onready var animationPlayer = $AnimationPlayer
+onready var animTree = $AnimationTree
+onready var animState = animTree.get("parameters/playback")
 onready var camera = $Camera2D
 # Called when the node enters the scene tree for the first time.
 
@@ -21,18 +23,13 @@ func _physics_process(delta):
 	
 	if direction != Vector2.ZERO:
 		#===Animations===
-		if direction.x > 0:
-			animationPlayer.play("RunRight")
-		elif direction.x < 0:
-			animationPlayer.play("RunLeft")
-		elif direction.y > 0:
-			animationPlayer.play("RunDown")
-		else:
-			animationPlayer.play("RunUp")
+		animTree.set("parameters/Idle/blend_position", direction)
+		animTree.set("parameters/Run/blend_position", direction)
+		animState.travel("Run")
 		#===Physics===
 		velocity = velocity.move_toward(direction * MAX_SPEED, ACCEL_SPEED * delta)
 	else:
-		animationPlayer.play("IdleDown")
+		animState.travel("Idle")
 		velocity = velocity.move_toward(Vector2.ZERO, FRICTION_SPEED * delta)
 	
 	velocity = move_and_slide(velocity)

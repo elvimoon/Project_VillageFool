@@ -22,9 +22,11 @@ onready var camera = $Camera2D
 # Called when the node enters the scene tree for the first time
 func _ready():
 	animTree.active = true
-
 # Called as fast as possible, delta is varied here (before physical processing)
 func _process(delta):
+	pass
+# Called after pre-process, delta is stable here
+func _physics_process(delta):
 	match state:
 		MOVE:
 			move(delta)
@@ -32,9 +34,6 @@ func _process(delta):
 			dodge(delta)
 		ATTACK:
 			attack(delta)
-# Called after pre-process, delta is stable here
-func _physics_process(delta):
-	pass
 
 ###===USER FUNCTIONS===###
 func attack(delta):

@@ -570,6 +570,7 @@ tile_data = PoolIntArray( -327666, 1, 0, -327665, 1, 2, -262130, 1, 65536, -2621
 [node name="Cliffs" type="TileMap" parent="."]
 tile_set = SubResource( 2 )
 cell_size = Vector2( 32, 32 )
+collision_mask = 0
 format = 1
 tile_data = PoolIntArray( -65538, 0, 0, -65537, 0, 1, -131072, 0, 1, -131071, 0, 1, -131070, 0, 1, -131069, 0, 1, -131068, 0, 1, -131067, 0, 1, -131066, 0, 2, -131064, 0, 0, -131063, 0, 1, -131062, 0, 1, -131061, 0, 2, -3, 0, 0, -2, 0, 131078, -1, 0, 65537, -65536, 0, 65541, -65535, 0, 131073, -65534, 0, 131073, -65533, 0, 131073, -65532, 0, 131073, -65531, 0, 131073, -65530, 0, 131074, -65528, 0, 131072, -65527, 0, 131073, -65526, 0, 65542, -65525, 0, 65538, 65533, 0, 65536, 65534, 0, 65537, 65535, 0, 65537, 0, 0, 65538, 10, 0, 65536, 11, 0, 65538, 131069, 0, 131072, 131070, 0, 131073, 131071, 0, 131073, 65536, 0, 131074, 65546, 0, 131072, 65547, 0, 131074, 262141, 0, 196608, 262142, 0, 6, 262143, 0, 1, 196608, 0, 2, 196618, 0, 0, 196619, 0, 2, 327678, 0, 65536, 327679, 0, 65537, 262144, 0, 65538, 262152, 0, 0, 262153, 0, 1, 262154, 0, 131078, 262155, 0, 65538, 393214, 0, 131072, 393215, 0, 131073, 327680, 0, 196613, 327681, 0, 196609, 327682, 0, 196609, 327683, 0, 196609, 327684, 0, 196609, 327685, 0, 196610, 327687, 0, 196608, 327688, 0, 196614, 327689, 0, 131073, 327690, 0, 131073, 327691, 0, 131074 )
 
@@ -578,44 +579,7 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Player" parent="YSort" instance=ExtResource( 2 )]
-position = Vector2( 208, 98 )
-
-[node name="Bushes" type="YSort" parent="YSort"]
-
-[node name="Bush" parent="YSort/Bushes" instance=ExtResource( 1 )]
-position = Vector2( 160, 43 )
-
-[node name="Bush2" parent="YSort/Bushes" instance=ExtResource( 1 )]
-position = Vector2( 184, 40 )
-
-[node name="Bush3" parent="YSort/Bushes" instance=ExtResource( 1 )]
-position = Vector2( 208, 43 )
-
-[node name="Bush4" parent="YSort/Bushes" instance=ExtResource( 1 )]
-position = Vector2( 72, 51 )
-
-[node name="Bush5" parent="YSort/Bushes" instance=ExtResource( 1 )]
-position = Vector2( 112, 115 )
-
-[node name="Bush6" parent="YSort/Bushes" instance=ExtResource( 1 )]
-position = Vector2( 192, 128 )
-
-[node name="Trees" type="YSort" parent="YSort"]
-
-[node name="Tree" parent="YSort/Trees" instance=ExtResource( 6 )]
-position = Vector2( 48, 0 )
-
-[node name="Tree2" parent="YSort/Trees" instance=ExtResource( 6 )]
-position = Vector2( 288, 8 )
-
-[node name="Tree3" parent="YSort/Trees" instance=ExtResource( 6 )]
-position = Vector2( 304, 23 )
-
-[node name="Tree4" parent="YSort/Trees" instance=ExtResource( 6 )]
-position = Vector2( 96, 43 )
-
-[node name="Grass" type="YSort" parent="YSort"]
+[node name="Grass" type="Node2D" parent="YSort"]
 
 [node name="Grass" parent="YSort/Grass" instance=ExtResource( 8 )]
 position = Vector2( 112, 32 )
@@ -754,3 +718,50 @@ position = Vector2( 304, 112 )
 
 [node name="Grass41" parent="YSort/Grass" instance=ExtResource( 8 )]
 position = Vector2( 304, 96 )
+
+[node name="Player" parent="YSort" instance=ExtResource( 2 )]
+position = Vector2( 208, 98 )
+
+[node name="Bushes" type="YSort" parent="YSort"]
+
+[node name="Bush" parent="YSort/Bushes" instance=ExtResource( 1 )]
+position = Vector2( 160, 43 )
+collision_mask = 0
+
+[node name="Bush2" parent="YSort/Bushes" instance=ExtResource( 1 )]
+position = Vector2( 184, 40 )
+collision_mask = 0
+
+[node name="Bush3" parent="YSort/Bushes" instance=ExtResource( 1 )]
+position = Vector2( 208, 43 )
+collision_mask = 0
+
+[node name="Bush4" parent="YSort/Bushes" instance=ExtResource( 1 )]
+position = Vector2( 72, 51 )
+collision_mask = 0
+
+[node name="Bush5" parent="YSort/Bushes" instance=ExtResource( 1 )]
+position = Vector2( 112, 115 )
+collision_mask = 0
+
+[node name="Bush6" parent="YSort/Bushes" instance=ExtResource( 1 )]
+position = Vector2( 192, 128 )
+collision_mask = 0
+
+[node name="Trees" type="YSort" parent="YSort"]
+
+[node name="Tree" parent="YSort/Trees" instance=ExtResource( 6 )]
+position = Vector2( 48, 0 )
+collision_mask = 0
+
+[node name="Tree2" parent="YSort/Trees" instance=ExtResource( 6 )]
+position = Vector2( 288, 8 )
+collision_mask = 0
+
+[node name="Tree3" parent="YSort/Trees" instance=ExtResource( 6 )]
+position = Vector2( 304, 23 )
+collision_mask = 0
+
+[node name="Tree4" parent="YSort/Trees" instance=ExtResource( 6 )]
+position = Vector2( 96, 43 )
+collision_mask = 0

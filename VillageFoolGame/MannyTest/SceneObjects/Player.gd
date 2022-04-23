@@ -17,11 +17,14 @@ onready var animationPlayer = $AnimationPlayer
 onready var animTree = $AnimationTree
 onready var animState = animTree.get("parameters/playback")
 onready var camera = $Camera2D
-# Called when the node enters the scene tree for the first time.
+
+###===SYSTEM PROCESSES===###
+# Called when the node enters the scene tree for the first time
 func _ready():
 	animTree.active = true
 
-func _physics_process(delta):
+# Called as fast as possible, delta is varied here (before physical processing)
+func _process(delta):
 	match state:
 		MOVE:
 			move(delta)
@@ -29,8 +32,11 @@ func _physics_process(delta):
 			dodge(delta)
 		ATTACK:
 			attack(delta)
-	
+# Called after pre-process, delta is stable here
+func _physics_process(delta):
+	pass
 
+###===USER FUNCTIONS===###
 func attack(delta):
 	animState.travel("Attack")
 	velocity = Vector2.ZERO

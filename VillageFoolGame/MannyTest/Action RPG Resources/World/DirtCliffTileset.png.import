@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/CliffTileset.png-5907a4cffd575d76e5ffa4f92d345a48.stex"
+path="res://.import/DirtCliffTileset.png-b3c8ddaf02720fa3927d169bbb54ccd3.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://MannyTest/Action RPG Resources/World/CliffTileset.png"
-dest_files=[ "res://.import/CliffTileset.png-5907a4cffd575d76e5ffa4f92d345a48.stex" ]
+source_file="res://MannyTest/Action RPG Resources/World/DirtCliffTileset.png"
+dest_files=[ "res://.import/DirtCliffTileset.png-b3c8ddaf02720fa3927d169bbb54ccd3.stex" ]
 
 [params]
 
@@ -18,7 +18,7 @@ compress/mode=3
 compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/bptc_ldr=0
-compress/normal_map=0
+compress/normal_map=2
 flags/repeat=0
 flags/filter=false
 flags/mipmaps=false
@@ -31,5 +31,5 @@ process/invert_color=false
 process/normal_map_invert_y=false
 stream=false
 size_limit=0
-detect_3d=true
+detect_3d=false
 svg/scale=1.0

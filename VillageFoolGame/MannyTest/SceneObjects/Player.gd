@@ -8,6 +8,8 @@ enum {
 var state = MOVE
 var velocity = Vector2.ZERO
 var direction = Vector2.ZERO
+var roll_vec = Vector2.DOWN
+var dodgeCooldown = 10
 
 const FRICTION_SPEED = 800
 const ACCEL_SPEED = 2000
@@ -16,12 +18,14 @@ const MAX_SPEED =88
 onready var animationPlayer = $AnimationPlayer
 onready var animTree = $AnimationTree
 onready var animState = animTree.get("parameters/playback")
+onready var swordBox = $SwordBoxPivot/SwordHitBox
 onready var camera = $Camera2D
 
 ###===SYSTEM PROCESSES===###
 # Called when the node enters the scene tree for the first time
 func _ready():
 	animTree.active = true
+	swordBox.knockback_vec = roll_vec
 # Called as fast as possible, delta is varied here (before physical processing)
 func _process(delta):
 	pass
@@ -42,13 +46,17 @@ func attack(delta):
 	
 
 func dodge(delta):
+	velocity = roll_vec * MAX_SPEED * 2 #<- This is the initial "Jump"
+	swordBox.knockback_vec = roll_vec
 	animState.travel("Dodge")
+	velocity = move_and_slide(velocity)
 
 func move(delta):
 	#get direction vector              V  x = 1 - 0             V  x = 0 - 1
 	direction.x = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
 	direction.y = Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")
 	direction = direction.normalized()
+	
 	
 	#===Movement===
 	if direction != Vector2.ZERO:
@@ -59,6 +67,8 @@ func move(delta):
 		animTree.set("parameters/Dodge/blend_position", direction)
 		animState.travel("Run")
 		#===Physics===
+		swordBox.knockback_vec = direction
+		roll_vec = direction
 		velocity = velocity.move_toward(direction * MAX_SPEED, ACCEL_SPEED * delta)
 	#===No Movement===
 	else:
@@ -66,12 +76,19 @@ func move(delta):
 		velocity = velocity.move_toward(Vector2.ZERO, FRICTION_SPEED * delta)
 	
 	#===State Machine===
-	if Input.is_action_just_pressed("attack"):
+	if Input.is_action_pressed("attack"):
 		state = ATTACK
-	elif Input.is_action_just_pressed("dodge"):
-		state = ROLL
+	elif Input.is_action_pressed("dodge"):
+		if dodgeCooldown <= 0:
+			dodgeCooldown = 10
+			state = ROLL
+		else:
+			state = MOVE
 	#Do
+	if dodgeCooldown >= 0:
+		dodgeCooldown -= 0.25
 	velocity = move_and_slide(velocity)
 
 func anim_ended():
+	velocity /= 2
 	state = MOVE

@@ -14,6 +14,11 @@ config/name="Village Fool Game"
 run/main_scene="res://MannyTest/Scenes/MannyTestScene.tscn"
 config/icon="res://icon.png"
 
+[debug]
+
+gdscript/warnings/unused_variable=false
+gdscript/warnings/unused_argument=false
+
 [display]
 
 window/size/width=256
@@ -49,10 +54,12 @@ dodge={
 2d_render/layer_2="Player"
 2d_render/layer_3="PlayerHitBox"
 2d_render/layer_4="EnemyHitBox"
+2d_render/layer_5="Enemy"
 2d_physics/layer_1="World"
 2d_physics/layer_2="Player"
 2d_physics/layer_3="PlayerHitBox"
 2d_physics/layer_4="EnemyHitBox"
+2d_physics/layer_5="Enemy"
 
 [physics]
 

@@ -6,17 +6,16 @@ export(int) var damage = 0
 onready var HP = maxHP setget setHP
 
 signal dead
-signal invincible
+signal hpChanged(v)
+signal maxChanged(v)
 
-export(bool) var invuln = false setget setIframe
+func setMax(v):
+	maxHP = v
+	self.HP = min(HP, maxHP)
+	emit_signal("maxChanged", maxHP)
 
-func setHP(val):
-	HP = val
-	print(HP)
+func setHP(v):
+	HP = v
+	emit_signal("hpChanged", HP)
 	if HP <= 0:
 		emit_signal("dead")
-
-func setIframe(state):
-	invuln = state
-	if invuln == true:
-		emit_signal("invincible")

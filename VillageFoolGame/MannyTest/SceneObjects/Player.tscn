@@ -1,9 +1,12 @@
-[gd_scene load_steps=56 format=2]
+[gd_scene load_steps=60 format=2]
 
 [ext_resource path="res://MannyTest/SceneObjects/Player.gd" type="Script" id=1]
 [ext_resource path="res://MannyTest/Action RPG Resources/Player/Player.png" type="Texture" id=2]
 [ext_resource path="res://MannyTest/SceneObjects/HitBox.tscn" type="PackedScene" id=3]
 [ext_resource path="res://MannyTest/SceneObjects/SwordHitBox.gd" type="Script" id=4]
+[ext_resource path="res://MannyTest/SceneObjects/HurtBox.tscn" type="PackedScene" id=5]
+[ext_resource path="res://MannyTest/Effects/PlayerStats.tscn" type="PackedScene" id=6]
+[ext_resource path="res://MannyTest/Action RPG Resources/Shadows/MediumShadow.png" type="Texture" id=8]
 
 [sub_resource type="CapsuleShape2D" id=2]
 radius = 4.0
@@ -667,10 +670,18 @@ graph_offset = Vector2( -104, -192.907 )
 radius = 9.0
 height = 12.0
 
+[sub_resource type="CapsuleShape2D" id=53]
+radius = 6.0
+height = 6.0
+
 [node name="Player" type="KinematicBody2D"]
 position = Vector2( 0, -9 )
 collision_layer = 2
 script = ExtResource( 1 )
+
+[node name="Shadow" type="Sprite" parent="."]
+position = Vector2( -1, 11 )
+texture = ExtResource( 8 )
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 0, 1 )
@@ -679,10 +690,16 @@ hframes = 60
 frame = 1
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2( 0, 2 )
 current = true
+smoothing_enabled = true
+smoothing_speed = 10.0
+drag_margin_left = 0.1
+drag_margin_top = 0.1
+drag_margin_right = 0.1
+drag_margin_bottom = 0.1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2( 0, 9 )
 rotation = 1.5708
 shape = SubResource( 2 )
@@ -716,6 +733,7 @@ parameters/Idle/blend_position = Vector2( -0.0570523, 0.692241 )
 parameters/Run/blend_position = Vector2( 0, 0 )
 
 [node name="SwordBoxPivot" type="Position2D" parent="."]
+visible = false
 position = Vector2( 0, 4 )
 rotation = 1.5708
 __meta__ = {
@@ -733,4 +751,20 @@ damage = 2
 shape = SubResource( 52 )
 disabled = true
 
+[node name="HurtBox" parent="." instance=ExtResource( 5 )]
+visible = false
+collision_layer = 32
+collision_mask = 0
+iFrameLength = 10.0
+
+[node name="CollisionShape2D" parent="HurtBox" index="0"]
+position = Vector2( 0, 3 )
+shape = SubResource( 53 )
+
+[node name="PlayerStats" parent="." instance=ExtResource( 6 )]
+maxHP = 4
+
+[connection signal="area_entered" from="HurtBox" to="." method="_on_HurtBox_area_entered"]
+
 [editable path="SwordBoxPivot/SwordHitBox"]
+[editable path="HurtBox"]

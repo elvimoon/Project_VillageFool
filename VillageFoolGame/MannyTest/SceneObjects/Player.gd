@@ -10,6 +10,7 @@ var velocity = Vector2.ZERO
 var direction = Vector2.ZERO
 var roll_vec = Vector2.DOWN
 var dodgeCooldown = 10
+var stats = PlayerStats
 
 const FRICTION_SPEED = 800
 const ACCEL_SPEED = 2000
@@ -19,6 +20,7 @@ onready var animationPlayer = $AnimationPlayer
 onready var animTree = $AnimationTree
 onready var animState = animTree.get("parameters/playback")
 onready var swordBox = $SwordBoxPivot/SwordHitBox
+onready var hurtBox = $HurtBox
 onready var camera = $Camera2D
 
 ###===SYSTEM PROCESSES===###
@@ -26,6 +28,7 @@ onready var camera = $Camera2D
 func _ready():
 	animTree.active = true
 	swordBox.knockback_vec = roll_vec
+	stats.connect("dead", self, "respawn")
 # Called as fast as possible, delta is varied here (before physical processing)
 func _process(delta):
 	pass
@@ -92,3 +95,10 @@ func move(delta):
 func anim_ended():
 	velocity /= 2
 	state = MOVE
+
+func _on_HurtBox_area_entered(area):
+	stats.HP -= 1
+
+func respawn():
+	PlayerStats.HP = 5
+	global_position = Respawn.global_position

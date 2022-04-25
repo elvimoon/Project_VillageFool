@@ -14,6 +14,11 @@ config/name="Village Fool Game"
 run/main_scene="res://MannyTest/Scenes/MannyTestScene.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+PlayerStats="*res://MannyTest/Effects/PlayerStats.tscn"
+Respawn="*res://UI/Respawn.tscn"
+
 [debug]
 
 gdscript/warnings/unused_variable=false
@@ -52,14 +57,19 @@ dodge={
 
 2d_render/layer_1="World"
 2d_render/layer_2="Player"
-2d_render/layer_3="PlayerHitBox"
+2d_render/layer_3="SwordHitBox"
 2d_render/layer_4="EnemyHitBox"
 2d_render/layer_5="Enemy"
+2d_render/layer_6="PlayerHurtbox"
+2d_render/layer_7="EnemyHurtBox"
 2d_physics/layer_1="World"
 2d_physics/layer_2="Player"
 2d_physics/layer_3="PlayerHitBox"
 2d_physics/layer_4="EnemyHitBox"
 2d_physics/layer_5="Enemy"
+2d_physics/layer_6="PlayerHurtBox"
+2d_physics/layer_7="EnemyHurtBox"
+2d_physics/layer_8="SoftCollider"
 
 [physics]
 
@@ -67,4 +77,8 @@ common/enable_pause_aware_picking=true
 
 [rendering]
 
+2d/snapping/use_gpu_pixel_snap=true
+quality/shadows/filter_mode=0
+quality/filters/use_nearest_mipmap_filter=true
+quality/filters/msaa=1
 environment/default_environment="res://default_env.tres"

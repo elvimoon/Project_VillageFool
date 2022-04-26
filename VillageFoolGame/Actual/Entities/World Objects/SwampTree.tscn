@@ -8,7 +8,6 @@ extents = Vector2( 32, 16 )
 [node name="SwampTree" type="StaticBody2D"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
 shape = SubResource( 1 )
 
 [node name="AnimatedSprite" type="Sprite" parent="."]

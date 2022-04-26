@@ -1,0 +1,70 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://MannyTest/LTree.png" type="Texture" id=1]
+
+[node name="ForestClusterHL" type="YSort"]
+
+[node name="LTree" type="Sprite" parent="."]
+position = Vector2( -112, -64 )
+texture = ExtResource( 1 )
+
+[node name="LTree2" type="Sprite" parent="."]
+position = Vector2( -56, -64 )
+texture = ExtResource( 1 )
+
+[node name="LTree3" type="Sprite" parent="."]
+position = Vector2( 0, -64 )
+texture = ExtResource( 1 )
+
+[node name="LTree6" type="Sprite" parent="."]
+position = Vector2( 112, -64 )
+texture = ExtResource( 1 )
+
+[node name="LTree4" type="Sprite" parent="."]
+position = Vector2( 56, -64 )
+texture = ExtResource( 1 )
+
+[node name="LTree5" type="Sprite" parent="."]
+position = Vector2( -80, -32 )
+texture = ExtResource( 1 )
+
+[node name="LTree7" type="Sprite" parent="."]
+position = Vector2( -24, -32 )
+texture = ExtResource( 1 )
+
+[node name="LTree8" type="Sprite" parent="."]
+position = Vector2( 32, -32 )
+texture = ExtResource( 1 )
+
+[node name="LTree9" type="Sprite" parent="."]
+position = Vector2( 144, -32 )
+texture = ExtResource( 1 )
+
+[node name="LTree10" type="Sprite" parent="."]
+position = Vector2( 88, -32 )
+texture = ExtResource( 1 )
+
+[node name="LTree11" type="Sprite" parent="."]
+position = Vector2( -112, 0 )
+texture = ExtResource( 1 )
+
+[node name="LTree12" type="Sprite" parent="."]
+position = Vector2( -56, 0 )
+texture = ExtResource( 1 )
+
+[node name="LTree13" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+
+[node name="LTree14" type="Sprite" parent="."]
+position = Vector2( 112, 0 )
+texture = ExtResource( 1 )
+
+[node name="LTree15" type="Sprite" parent="."]
+position = Vector2( 56, 0 )
+texture = ExtResource( 1 )
+
+[node name="Solidity" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Solidity"]
+position = Vector2( -8, 0 )
+polygon = PoolVector2Array( -136, 40, -136, -88, 152, -88, 152, -56, 184, -56, 184, 8, 152, 8, 152, 40 )

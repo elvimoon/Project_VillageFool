@@ -1,0 +1,57 @@
+[gd_scene format=2]
+
+[node name="Menu" type="Control"]
+margin_right = 40.0
+margin_bottom = 40.0
+focus_neighbour_right = NodePath("../Option2")
+
+[node name="ItemList" type="ItemList" parent="."]
+margin_right = 224.0
+margin_bottom = 128.0
+select_mode = 1
+max_text_lines = 4
+auto_height = true
+max_columns = 3
+same_column_width = true
+
+[node name="Label" type="Label" parent="ItemList"]
+margin_left = 16.0
+margin_top = 16.0
+margin_right = 56.0
+margin_bottom = 30.0
+text = "Fight"
+
+[node name="Label2" type="Label" parent="ItemList"]
+margin_left = 144.0
+margin_top = 80.0
+margin_right = 184.0
+margin_bottom = 94.0
+text = "Run"
+
+[node name="Label5" type="Label" parent="ItemList"]
+margin_left = 16.0
+margin_top = 80.0
+margin_right = 56.0
+margin_bottom = 94.0
+text = "Status"
+
+[node name="Label6" type="Label" parent="ItemList"]
+margin_left = 80.0
+margin_top = 80.0
+margin_right = 120.0
+margin_bottom = 94.0
+text = "Defend"
+
+[node name="Label3" type="Label" parent="ItemList"]
+margin_left = 80.0
+margin_top = 16.0
+margin_right = 120.0
+margin_bottom = 30.0
+text = "Items"
+
+[node name="Label4" type="Label" parent="ItemList"]
+margin_left = 144.0
+margin_top = 16.0
+margin_right = 190.0
+margin_bottom = 30.0
+text = "Powers"

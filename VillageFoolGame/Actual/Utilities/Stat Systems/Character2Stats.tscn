@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Actual/Utilities/Stat Systems/EntityStats.tscn" type="PackedScene" id=1]
+
+[node name="Character2Stats" instance=ExtResource( 1 )]
+baseHP = 5
+baseEP = 20
+baseATT = 10
+basePOW = 35
+baseSPD = 25

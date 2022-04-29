@@ -21,6 +21,18 @@ drag_margin_bottom = 1.0
 editor_draw_limits = true
 editor_draw_drag_margin = true
 
+[node name="Enemy" parent="Camera2D" instance=ExtResource( 2 )]
+position = Vector2( -68, -20 )
+scale = Vector2( 2, 2 )
+
+[node name="Enemy2" parent="Camera2D" instance=ExtResource( 2 )]
+position = Vector2( 4, 0 )
+scale = Vector2( 2, 2 )
+
+[node name="Enemy3" parent="Camera2D" instance=ExtResource( 2 )]
+position = Vector2( 80, -20 )
+scale = Vector2( 2, 2 )
+
 [node name="TopText" type="Panel" parent="Camera2D"]
 margin_left = -128.0
 margin_top = -122.0
@@ -157,38 +169,32 @@ text = "Run"
 align = 1
 valign = 1
 
-[node name="CharacterNode" parent="Camera2D" instance=ExtResource( 4 )]
+[node name="BoJanglesPanel" parent="Camera2D" instance=ExtResource( 4 )]
 anchor_top = 1.0
 anchor_bottom = 1.0
 margin_left = -128.0
-margin_top = 92.0
+margin_top = 96.0
 margin_right = -64.0
-margin_bottom = 180.0
+margin_bottom = 184.0
 
-[node name="CharacterNode2" parent="Camera2D" instance=ExtResource( 4 )]
+[node name="MoJanglesPanel" parent="Camera2D" instance=ExtResource( 4 )]
 margin_left = -64.0
-margin_top = 92.0
+margin_top = 96.0
 margin_right = 0.0
-margin_bottom = 180.0
+margin_bottom = 184.0
+inputKey = 1
+Char = "Char2"
 
-[node name="CharacterNode3" parent="Camera2D" instance=ExtResource( 4 )]
-margin_top = 92.0
-margin_bottom = 180.0
+[node name="JoBanglesPanel" parent="Camera2D" instance=ExtResource( 4 )]
+margin_top = 96.0
+margin_bottom = 184.0
+inputKey = 2
+Char = "Char3"
 
-[node name="CharacterNode4" parent="Camera2D" instance=ExtResource( 4 )]
+[node name="TemPanel" parent="Camera2D" instance=ExtResource( 4 )]
 margin_left = 64.0
-margin_top = 92.0
+margin_top = 96.0
 margin_right = 128.0
-margin_bottom = 180.0
-
-[node name="Enemy" parent="." instance=ExtResource( 2 )]
-position = Vector2( -68, 12 )
-scale = Vector2( 2, 2 )
-
-[node name="Enemy2" parent="." instance=ExtResource( 2 )]
-position = Vector2( 4, 32 )
-scale = Vector2( 2, 2 )
-
-[node name="Enemy3" parent="." instance=ExtResource( 2 )]
-position = Vector2( 80, 12 )
-scale = Vector2( 2, 2 )
+margin_bottom = 184.0
+inputKey = 3
+Char = "Char4"

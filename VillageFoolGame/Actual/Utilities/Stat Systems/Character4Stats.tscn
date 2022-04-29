@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Actual/Utilities/Stat Systems/EntityStats.tscn" type="PackedScene" id=1]
 
-[node name="Character3Stats" instance=ExtResource( 1 )]
-Name = "JoBangles"
-Condition = "Gnarly"
-level = 37.0
+[node name="Character4Stats" instance=ExtResource( 1 )]
+Name = "Tem"
+Condition = "Tubular"
+level = 50.0

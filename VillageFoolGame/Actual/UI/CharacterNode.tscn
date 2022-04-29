@@ -1,20 +1,37 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://MannyTest/TeenyTinyFontSmall.tres" type="DynamicFont" id=1]
 [ext_resource path="res://MannyTest/DialogueBoxBackground.tres" type="StyleBox" id=2]
 [ext_resource path="res://MannyTest/DialogueBox.tres" type="Theme" id=3]
 [ext_resource path="res://Actual/UI/CharacterNode.gd" type="Script" id=4]
+[ext_resource path="res://MannyTest/BGGrass.png" type="Texture" id=5]
+[ext_resource path="res://MannyTest/SelectionArrow.png" type="Texture" id=6]
+
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 6 )
+region = Rect2( 0, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 6 )
+region = Rect2( 64, 0, 16, 16 )
+
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [ SubResource( 1 ), SubResource( 2 ) ],
+"loop": true,
+"name": "d",
+"speed": 2.0
+} ]
 
 [node name="CharacterNode" type="Panel"]
-margin_right = 64.0
+margin_right = 63.9999
 margin_bottom = 88.0
 theme = ExtResource( 3 )
 custom_styles/panel = ExtResource( 2 )
 script = ExtResource( 4 )
 
 [node name="CharName" type="Label" parent="."]
-margin_left = 28.0
-margin_top = 4.0
+margin_left = 4.0
 margin_right = 60.0
 margin_bottom = 12.0
 custom_fonts/font = ExtResource( 1 )
@@ -23,61 +40,48 @@ align = 1
 valign = 1
 
 [node name="HP" type="Label" parent="."]
-margin_left = 26.0
-margin_top = 12.0
-margin_right = 32.0
-margin_bottom = 20.0
+margin_left = 2.0
+margin_top = 9.0
 custom_fonts/font = ExtResource( 1 )
 text = "HP"
 align = 1
 valign = 1
 
 [node name="HPVal" type="Label" parent="."]
-margin_left = 35.0
-margin_top = 12.0
+margin_left = 11.0
+margin_top = 8.0
 margin_right = 60.0
-margin_bottom = 20.0
+margin_bottom = 16.0
 custom_fonts/font = ExtResource( 1 )
-text = "333/999"
+text = "333333/999999"
 align = 2
 valign = 1
 
 [node name="EPVal" type="Label" parent="."]
-margin_left = 35.0
-margin_top = 20.0
-margin_right = 60.0
-margin_bottom = 28.0
+margin_left = 11.0
+margin_top = 15.0
 custom_fonts/font = ExtResource( 1 )
-text = "777/589"
+text = "777777/777777"
 align = 2
 valign = 1
 
 [node name="EP" type="Label" parent="."]
-margin_left = 26.0
-margin_top = 20.0
-margin_right = 32.0
-margin_bottom = 28.0
+margin_left = 2.0
+margin_top = 15.0
 custom_fonts/font = ExtResource( 1 )
-text = "EP|"
+text = "EP"
 align = 1
 valign = 1
 
 [node name="Condition" type="Label" parent="."]
 margin_left = 12.0
-margin_top = 32.0
+margin_top = 20.0
 margin_right = 52.0
-margin_bottom = 40.0
+margin_bottom = 28.0
 custom_fonts/font = ExtResource( 1 )
 text = "Conditions"
 align = 1
 valign = 1
-
-[node name="ColorRect2" type="ColorRect" parent="."]
-margin_left = 4.0
-margin_top = 4.0
-margin_right = 24.0
-margin_bottom = 24.0
-color = Color( 1, 0, 0, 1 )
 
 [node name="StatsGrid" type="GridContainer" parent="."]
 margin_left = 6.0
@@ -179,3 +183,18 @@ size_flags_horizontal = 3
 size_flags_vertical = 6
 custom_fonts/font = ExtResource( 1 )
 text = "XXXXXXX"
+
+[node name="CharacterSprite" type="TextureRect" parent="."]
+margin_left = 4.0
+margin_top = 28.0
+margin_right = 60.0
+margin_bottom = 84.0
+texture = ExtResource( 5 )
+expand = true
+
+[node name="SelectArrow" type="AnimatedSprite" parent="."]
+position = Vector2( 32, -12 )
+frames = SubResource( 3 )
+animation = "d"
+frame = 1
+playing = true

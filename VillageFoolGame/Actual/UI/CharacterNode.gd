@@ -21,34 +21,20 @@ func _ready():
 	
 	fillText(stat)
 func _process(delta):
-	
-	if Input.get_action_strength("up"):
-		if inputKey == 0: currentTurn = true
-		else: currentTurn = false
-	if Input.get_action_strength("down"):
-		if inputKey == 1: currentTurn = true
-		else: currentTurn = false
-	if Input.get_action_strength("left"):
-		if inputKey == 2: currentTurn = true
-		else: currentTurn = false
-	if Input.get_action_strength("right"):
-		if inputKey == 3: currentTurn = true
-		else: currentTurn = false
-	if Input.is_action_just_released("up") || Input.is_action_just_released("down") || Input.is_action_just_released("left") || Input.is_action_just_released("right"):
-		currentTurn = false
-
 	if checkStats: get_node("CharacterSprite").visible = false
 	if  selected:
 		select.play("d")
+		movePanelUp()
 	else: 
 		select.stop()
 		select.frame = 1
+		movePanelDown()
 	if currentTurn == true: movePanelUp()
 	else: movePanelDown()
 func movePanelUp():
 	self.rect_position.y = move_toward(rect_position.y, 33, 1)
 func movePanelDown():
-	self.rect_position.y = move_toward(rect_position.y, 96, 1)
+	self.rect_position.y = move_toward(rect_position.y, 94, 1)
 func fillText(v):
 	get_node("CharName").text = v.Name
 	if v.Condition == "Paralyzed": get_node("Condition").add_color_override("font_color", Color(237, 255, 1))

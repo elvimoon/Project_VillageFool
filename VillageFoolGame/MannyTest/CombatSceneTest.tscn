@@ -1,11 +1,12 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Actual/Utilities/TileMap Sets/GrassFloor.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Actual/Entities/Enemies/EnemyBase.tscn" type="PackedScene" id=2]
-[ext_resource path="res://MannyTest/TeenyTinyPixels.tres" type="DynamicFont" id=3]
+[ext_resource path="res://MenuButton.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Actual/UI/CharacterNode.tscn" type="PackedScene" id=4]
 [ext_resource path="res://MannyTest/DialogueBoxBackground.tres" type="StyleBox" id=5]
 [ext_resource path="res://MannyTest/DialogueBox.tres" type="Theme" id=6]
+[ext_resource path="res://MannyTest/MenuBox.gd" type="Script" id=7]
 
 [node name="BattleScene" type="Node2D"]
 
@@ -33,7 +34,7 @@ scale = Vector2( 2, 2 )
 position = Vector2( 80, -20 )
 scale = Vector2( 2, 2 )
 
-[node name="TopText" type="Panel" parent="Camera2D"]
+[node name="MenuDialogue" type="Panel" parent="Camera2D"]
 margin_left = -128.0
 margin_top = -122.0
 margin_right = 128.0
@@ -41,160 +42,138 @@ margin_bottom = -56.0
 theme = ExtResource( 6 )
 custom_styles/panel = ExtResource( 5 )
 
-[node name="MarginContainer" type="MarginContainer" parent="Camera2D/TopText"]
-margin_left = 8.0
+[node name="MarginContainer" type="MarginContainer" parent="Camera2D/MenuDialogue"]
+margin_left = 16.0
 margin_top = 4.0
 margin_right = 248.0
 margin_bottom = 40.0
 
-[node name="MenuBox" type="GridContainer" parent="Camera2D/TopText/MarginContainer"]
-margin_right = 240.0
+[node name="MenuBox" type="GridContainer" parent="Camera2D/MenuDialogue/MarginContainer"]
+margin_right = 232.0
 margin_bottom = 36.0
 grow_horizontal = 2
 grow_vertical = 2
+focus_mode = 2
 columns = 3
+script = ExtResource( 7 )
 
-[node name="Fight" type="Control" parent="Camera2D/TopText/MarginContainer/MenuBox"]
-margin_right = 77.0
-margin_bottom = 16.0
+[node name="Fight" parent="Camera2D/MenuDialogue/MarginContainer/MenuBox" instance=ExtResource( 3 )]
+margin_right = 74.0
+focus_neighbour_left = NodePath("../Items")
+focus_neighbour_top = NodePath("../Status")
+focus_neighbour_right = NodePath("../Powers")
+focus_neighbour_bottom = NodePath("../Status")
+focus_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+selected = true
 
-[node name="Label" type="Label" parent="Camera2D/TopText/MarginContainer/MenuBox/Fight"]
-margin_right = 77.0
-margin_bottom = 16.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 0
-size_flags_vertical = 0
-custom_fonts/font = ExtResource( 3 )
-text = "Fight"
-align = 1
-valign = 1
+[node name="OptionArrow" parent="Camera2D/MenuDialogue/MarginContainer/MenuBox/Fight" index="0"]
+frame = 0
 
-[node name="Power" type="Control" parent="Camera2D/TopText/MarginContainer/MenuBox"]
-margin_left = 81.0
-margin_right = 158.0
-margin_bottom = 16.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
+[node name="Powers" parent="Camera2D/MenuDialogue/MarginContainer/MenuBox" instance=ExtResource( 3 )]
+margin_left = 78.0
+margin_right = 152.0
+focus_neighbour_left = NodePath("../Fight")
+focus_neighbour_top = NodePath("../Examine")
+focus_neighbour_right = NodePath("../Items")
+focus_neighbour_bottom = NodePath("../Examine")
+focus_mode = 2
+text = "Powers"
 
-[node name="Label" type="Label" parent="Camera2D/TopText/MarginContainer/MenuBox/Power"]
-margin_right = 77.0
-margin_bottom = 16.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 0
-size_flags_vertical = 0
-custom_fonts/font = ExtResource( 3 )
-text = "Power"
-align = 1
-valign = 1
+[node name="OptionArrow" parent="Camera2D/MenuDialogue/MarginContainer/MenuBox/Powers" index="0"]
+frame = 0
 
-[node name="Items" type="Control" parent="Camera2D/TopText/MarginContainer/MenuBox"]
-margin_left = 162.0
-margin_right = 239.0
-margin_bottom = 16.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
+[node name="Items" parent="Camera2D/MenuDialogue/MarginContainer/MenuBox" instance=ExtResource( 3 )]
+margin_left = 156.0
+margin_right = 230.0
+focus_neighbour_left = NodePath("../Powers")
+focus_neighbour_top = NodePath("../Run")
+focus_neighbour_right = NodePath("../Fight")
+focus_neighbour_bottom = NodePath("../Run")
+focus_mode = 2
+text = "Items"
 
-[node name="Label" type="Label" parent="Camera2D/TopText/MarginContainer/MenuBox/Items"]
-margin_right = 77.0
-margin_bottom = 16.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 0
-size_flags_vertical = 0
-custom_fonts/font = ExtResource( 3 )
-text = "Item"
-align = 1
-valign = 1
+[node name="OptionArrow" parent="Camera2D/MenuDialogue/MarginContainer/MenuBox/Items" index="0"]
+frame = 0
 
-[node name="Status" type="Control" parent="Camera2D/TopText/MarginContainer/MenuBox"]
+[node name="Status" parent="Camera2D/MenuDialogue/MarginContainer/MenuBox" instance=ExtResource( 3 )]
 margin_top = 20.0
-margin_right = 77.0
+margin_right = 74.0
 margin_bottom = 36.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="Label" type="Label" parent="Camera2D/TopText/MarginContainer/MenuBox/Status"]
-margin_right = 77.0
-margin_bottom = 16.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 0
-size_flags_vertical = 0
-custom_fonts/font = ExtResource( 3 )
+focus_neighbour_left = NodePath("../Run")
+focus_neighbour_top = NodePath("../Fight")
+focus_neighbour_right = NodePath("../Examine")
+focus_neighbour_bottom = NodePath("../Fight")
+focus_mode = 2
 text = "Status"
-align = 1
-valign = 1
 
-[node name="Defend" type="Control" parent="Camera2D/TopText/MarginContainer/MenuBox"]
-margin_left = 81.0
+[node name="OptionArrow" parent="Camera2D/MenuDialogue/MarginContainer/MenuBox/Status" index="0"]
+frame = 0
+
+[node name="Examine" parent="Camera2D/MenuDialogue/MarginContainer/MenuBox" instance=ExtResource( 3 )]
+margin_left = 78.0
 margin_top = 20.0
-margin_right = 158.0
+margin_right = 152.0
 margin_bottom = 36.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
+focus_neighbour_left = NodePath("../Status")
+focus_neighbour_top = NodePath("../Powers")
+focus_neighbour_right = NodePath("../Run")
+focus_neighbour_bottom = NodePath("../Powers")
+focus_mode = 2
+text = "Examine"
 
-[node name="Label" type="Label" parent="Camera2D/TopText/MarginContainer/MenuBox/Defend"]
-margin_right = 77.0
-margin_bottom = 16.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 0
-size_flags_vertical = 0
-custom_fonts/font = ExtResource( 3 )
-text = "Defend"
-align = 1
-valign = 1
+[node name="OptionArrow" parent="Camera2D/MenuDialogue/MarginContainer/MenuBox/Examine" index="0"]
+frame = 0
 
-[node name="Run" type="Control" parent="Camera2D/TopText/MarginContainer/MenuBox"]
-margin_left = 162.0
+[node name="Run" parent="Camera2D/MenuDialogue/MarginContainer/MenuBox" instance=ExtResource( 3 )]
+margin_left = 156.0
 margin_top = 20.0
-margin_right = 239.0
+margin_right = 230.0
 margin_bottom = 36.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="Label" type="Label" parent="Camera2D/TopText/MarginContainer/MenuBox/Run"]
-margin_right = 77.0
-margin_bottom = 16.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 0
-size_flags_vertical = 0
-custom_fonts/font = ExtResource( 3 )
+focus_neighbour_left = NodePath("../Examine")
+focus_neighbour_top = NodePath("../Items")
+focus_neighbour_right = NodePath("../Status")
+focus_neighbour_bottom = NodePath("../Items")
+focus_mode = 2
 text = "Run"
-align = 1
-valign = 1
+
+[node name="OptionArrow" parent="Camera2D/MenuDialogue/MarginContainer/MenuBox/Run" index="0"]
+frame = 0
 
 [node name="BoJanglesPanel" parent="Camera2D" instance=ExtResource( 4 )]
 anchor_top = 1.0
 anchor_bottom = 1.0
 margin_left = -128.0
-margin_top = 96.0
+margin_top = 95.0
 margin_right = -64.0
-margin_bottom = 184.0
+margin_bottom = 183.0
 
 [node name="MoJanglesPanel" parent="Camera2D" instance=ExtResource( 4 )]
 margin_left = -64.0
-margin_top = 96.0
+margin_top = 95.0
 margin_right = 0.0
-margin_bottom = 184.0
+margin_bottom = 183.0
 inputKey = 1
 Char = "Char2"
 
 [node name="JoBanglesPanel" parent="Camera2D" instance=ExtResource( 4 )]
-margin_top = 96.0
-margin_bottom = 184.0
+margin_top = 95.0
+margin_bottom = 183.0
 inputKey = 2
 Char = "Char3"
 
 [node name="TemPanel" parent="Camera2D" instance=ExtResource( 4 )]
 margin_left = 64.0
-margin_top = 96.0
+margin_top = 95.0
 margin_right = 128.0
-margin_bottom = 184.0
+margin_bottom = 183.0
 inputKey = 3
 Char = "Char4"
+
+[editable path="Camera2D/MenuDialogue/MarginContainer/MenuBox/Fight"]
+[editable path="Camera2D/MenuDialogue/MarginContainer/MenuBox/Powers"]
+[editable path="Camera2D/MenuDialogue/MarginContainer/MenuBox/Items"]
+[editable path="Camera2D/MenuDialogue/MarginContainer/MenuBox/Status"]
+[editable path="Camera2D/MenuDialogue/MarginContainer/MenuBox/Examine"]
+[editable path="Camera2D/MenuDialogue/MarginContainer/MenuBox/Run"]

@@ -1,17 +1,102 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=27 format=2]
 
-[ext_resource path="res://Actual/Utilities/TileMap Sets/GrassFloor.tscn" type="PackedScene" id=1]
+[ext_resource path="res://MannyTest/BattleBackground.png" type="Texture" id=1]
 [ext_resource path="res://Actual/Entities/Enemies/EnemyBase.tscn" type="PackedScene" id=2]
-[ext_resource path="res://MenuButton.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Actual/UI/MenuButton.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Actual/UI/CharacterNode.tscn" type="PackedScene" id=4]
 [ext_resource path="res://MannyTest/DialogueBoxBackground.tres" type="StyleBox" id=5]
 [ext_resource path="res://MannyTest/DialogueBox.tres" type="Theme" id=6]
-[ext_resource path="res://MannyTest/MenuBox.gd" type="Script" id=7]
+[ext_resource path="res://Actual/UI/Scripts/MenuDialogue.gd" type="Script" id=7]
+
+[sub_resource type="AtlasTexture" id=74]
+atlas = ExtResource( 1 )
+region = Rect2( 0, 0, 256, 244 )
+
+[sub_resource type="AtlasTexture" id=75]
+atlas = ExtResource( 1 )
+region = Rect2( 256, 0, 256, 244 )
+
+[sub_resource type="AtlasTexture" id=76]
+atlas = ExtResource( 1 )
+region = Rect2( 512, 0, 256, 244 )
+
+[sub_resource type="AtlasTexture" id=77]
+atlas = ExtResource( 1 )
+region = Rect2( 768, 0, 256, 244 )
+
+[sub_resource type="AtlasTexture" id=78]
+atlas = ExtResource( 1 )
+region = Rect2( 1024, 0, 256, 244 )
+
+[sub_resource type="AtlasTexture" id=79]
+atlas = ExtResource( 1 )
+region = Rect2( 1280, 0, 256, 244 )
+
+[sub_resource type="AtlasTexture" id=80]
+atlas = ExtResource( 1 )
+region = Rect2( 1536, 0, 256, 244 )
+
+[sub_resource type="AtlasTexture" id=81]
+atlas = ExtResource( 1 )
+region = Rect2( 1792, 0, 256, 244 )
+
+[sub_resource type="AtlasTexture" id=82]
+atlas = ExtResource( 1 )
+region = Rect2( 2048, 0, 256, 244 )
+
+[sub_resource type="AtlasTexture" id=83]
+atlas = ExtResource( 1 )
+region = Rect2( 2304, 0, 256, 244 )
+
+[sub_resource type="AtlasTexture" id=84]
+atlas = ExtResource( 1 )
+region = Rect2( 2560, 0, 256, 244 )
+
+[sub_resource type="AtlasTexture" id=85]
+atlas = ExtResource( 1 )
+region = Rect2( 2816, 0, 256, 244 )
+
+[sub_resource type="AtlasTexture" id=86]
+atlas = ExtResource( 1 )
+region = Rect2( 3072, 0, 256, 244 )
+
+[sub_resource type="AtlasTexture" id=87]
+atlas = ExtResource( 1 )
+region = Rect2( 3328, 0, 256, 244 )
+
+[sub_resource type="AtlasTexture" id=88]
+atlas = ExtResource( 1 )
+region = Rect2( 3584, 0, 256, 244 )
+
+[sub_resource type="AtlasTexture" id=89]
+atlas = ExtResource( 1 )
+region = Rect2( 3840, 0, 256, 244 )
+
+[sub_resource type="AtlasTexture" id=90]
+atlas = ExtResource( 1 )
+region = Rect2( 4096, 0, 256, 244 )
+
+[sub_resource type="AtlasTexture" id=91]
+atlas = ExtResource( 1 )
+region = Rect2( 4352, 0, 256, 244 )
+
+[sub_resource type="SpriteFrames" id=73]
+animations = [ {
+"frames": [ SubResource( 74 ), SubResource( 75 ), SubResource( 76 ), SubResource( 77 ), SubResource( 78 ), SubResource( 79 ), SubResource( 80 ), SubResource( 81 ), SubResource( 82 ), SubResource( 83 ), SubResource( 84 ), SubResource( 85 ), SubResource( 86 ), SubResource( 87 ), SubResource( 88 ), SubResource( 89 ), SubResource( 90 ), SubResource( 91 ) ],
+"loop": true,
+"name": "New Anim",
+"speed": 20.0
+} ]
 
 [node name="BattleScene" type="Node2D"]
 
-[node name="GrassFloor" parent="." instance=ExtResource( 1 )]
-tile_data = PoolIntArray( -720908, 1, 131074, -720907, 1, 131074, -720906, 1, 131074, -720905, 1, 131074, -720904, 1, 131074, -720903, 1, 131073, -720902, 1, 131074, -720901, 1, 131074, -720900, 1, 131074, -720899, 1, 131074, -720898, 1, 131074, -720897, 1, 131074, -786432, 1, 131074, -786431, 1, 131074, -786430, 1, 131074, -786429, 1, 131074, -786428, 1, 131074, -786427, 1, 131074, -786426, 1, 131074, -786425, 1, 131074, -786424, 1, 131074, -786423, 1, 131074, -786422, 1, 131074, -786421, 1, 131074, -786420, 1, 131074, -786419, 1, 131074, -786418, 1, 131074, -786417, 1, 131074, -786416, 1, 131074, -655372, 1, 131074, -655371, 1, 131074, -655370, 1, 1, -655369, 1, 131074, -655368, 1, 131074, -655367, 1, 131074, -655366, 1, 131074, -655365, 1, 131074, -655364, 1, 131072, -655363, 1, 131074, -655362, 1, 131074, -655361, 1, 1, -720896, 1, 0, -720895, 1, 131074, -720894, 1, 65537, -720893, 1, 131074, -720892, 1, 131074, -720891, 1, 65536, -720890, 1, 2, -720889, 1, 131074, -720888, 1, 131074, -720887, 1, 131074, -720886, 1, 131074, -720885, 1, 131074, -720884, 1, 131074, -720883, 1, 131074, -720882, 1, 131072, -720881, 1, 131074, -720880, 1, 131074, -589836, 1, 131074, -589835, 1, 131074, -589834, 1, 131074, -589833, 1, 131074, -589832, 1, 131074, -589831, 1, 131074, -589830, 1, 131074, -589829, 1, 0, -589828, 1, 131074, -589827, 1, 131073, -589826, 1, 131074, -589825, 1, 131074, -655360, 1, 131074, -655359, 1, 131074, -655358, 1, 131074, -655357, 1, 131074, -655356, 1, 131074, -655355, 1, 131074, -655354, 1, 131072, -655353, 1, 131074, -655352, 1, 131074, -655351, 1, 131074, -655350, 1, 131074, -655349, 1, 131074, -655348, 1, 131074, -655347, 1, 131074, -655346, 1, 65536, -655345, 1, 131074, -655344, 1, 131074, -524300, 1, 131074, -524299, 1, 131074, -524298, 1, 131074, -524297, 1, 2, -524296, 1, 65536, -524295, 1, 131074, -524294, 1, 131074, -524293, 1, 131074, -524292, 1, 65538, -524291, 1, 131072, -524290, 1, 131074, -524289, 1, 131074, -589824, 1, 2, -589823, 1, 131072, -589822, 1, 131074, -589821, 1, 131074, -589820, 1, 131074, -589819, 1, 131074, -589818, 1, 131074, -589817, 1, 2, -589816, 1, 131073, -589815, 1, 131074, -589814, 1, 131074, -589813, 1, 131074, -589812, 1, 2, -589811, 1, 131074, -589810, 1, 131074, -589809, 1, 131074, -589808, 1, 131074, -458764, 1, 131074, -458763, 1, 131074, -458762, 1, 131074, -458761, 1, 65538, -458760, 1, 131074, -458759, 1, 131073, -458758, 1, 131074, -458757, 1, 0, -458756, 1, 65537, -458755, 1, 131074, -458754, 1, 131074, -458753, 1, 131074, -524288, 1, 131074, -524287, 1, 131074, -524286, 1, 131074, -524285, 1, 131074, -524284, 1, 131074, -524283, 1, 131074, -524282, 1, 131074, -524281, 1, 131074, -524280, 1, 131074, -524279, 1, 0, -524278, 1, 131074, -524277, 1, 131074, -524276, 1, 65536, -524275, 1, 131074, -524274, 1, 131074, -524273, 1, 0, -524272, 1, 131074, -393228, 1, 131072, -393227, 1, 131074, -393226, 1, 131074, -393225, 1, 65537, -393224, 1, 131074, -393223, 1, 131074, -393222, 1, 131074, -393221, 1, 131074, -393220, 1, 131074, -393219, 1, 131074, -393218, 1, 131074, -393217, 1, 131074, -458752, 1, 2, -458751, 1, 131074, -458750, 1, 131074, -458749, 1, 131074, -458748, 1, 131074, -458747, 1, 131074, -458746, 1, 131074, -458745, 1, 131074, -458744, 1, 131074, -458743, 1, 131074, -458742, 1, 131074, -458741, 1, 131074, -458740, 1, 131074, -458739, 1, 131074, -458738, 1, 0, -458737, 1, 131074, -458736, 1, 131074, -327692, 1, 131074, -327691, 1, 131074, -327690, 1, 131074, -327689, 1, 131074, -327688, 1, 131074, -327687, 1, 131074, -327686, 1, 131074, -327685, 1, 131074, -327684, 1, 131074, -327683, 1, 131074, -327682, 1, 131074, -327681, 1, 131074, -393216, 1, 131074, -393215, 1, 131074, -393214, 1, 131074, -393213, 1, 131074, -393212, 1, 131074, -393211, 1, 131074, -393210, 1, 131074, -393209, 1, 65538, -393208, 1, 131074, -393207, 1, 131074, -393206, 1, 65538, -393205, 1, 131074, -393204, 1, 131074, -393203, 1, 131074, -393202, 1, 1, -393201, 1, 131074, -393200, 1, 131074, -262156, 1, 131074, -262155, 1, 131074, -262154, 1, 131074, -262153, 1, 131074, -262152, 1, 131074, -262151, 1, 131074, -262150, 1, 131074, -262149, 1, 131074, -262148, 1, 131074, -262147, 1, 131074, -262146, 1, 131074, -262145, 1, 131074, -327680, 1, 131074, -327679, 1, 131074, -327678, 1, 2, -327677, 1, 131074, -327676, 1, 0, -327675, 1, 131074, -327674, 1, 131074, -327673, 1, 131074, -327672, 1, 131074, -327671, 1, 131074, -327670, 1, 131074, -327669, 1, 2, -327668, 1, 131074, -327667, 1, 131074, -327666, 1, 131074, -327665, 1, 131074, -327664, 1, 131074, -196620, 1, 131074, -196619, 1, 131074, -196618, 1, 131074, -196617, 1, 131074, -196616, 1, 131074, -196615, 1, 131074, -196614, 1, 131074, -196613, 1, 131074, -196612, 1, 0, -196611, 1, 131074, -196610, 1, 131074, -196609, 1, 65536, -262144, 1, 131074, -262143, 1, 131074, -262142, 1, 131074, -262141, 1, 131074, -262140, 1, 131074, -262139, 1, 131073, -262138, 1, 131073, -262137, 1, 131073, -262136, 1, 131074, -262135, 1, 131074, -262134, 1, 131074, -262133, 1, 131074, -262132, 1, 2, -262131, 1, 1, -262130, 1, 65538, -262129, 1, 131074, -262128, 1, 131074, -131084, 1, 131074, -131083, 1, 131074, -131082, 1, 131074, -131081, 1, 131074, -131080, 1, 131074, -131079, 1, 131074, -131078, 1, 131074, -131077, 1, 131074, -131076, 1, 131074, -131075, 1, 131074, -131074, 1, 131074, -131073, 1, 131074, -196608, 1, 131074, -196607, 1, 131074, -196606, 1, 131074, -196605, 1, 131074, -196604, 1, 131074, -196603, 1, 1, -196602, 1, 131074, -196601, 1, 0, -196600, 1, 131074, -196599, 1, 131074, -196598, 1, 131074, -196597, 1, 131074, -196596, 1, 131074, -196595, 1, 131074, -196594, 1, 131074, -196593, 1, 131074, -196592, 1, 131074, -65548, 1, 131074, -65547, 1, 131072, -65546, 1, 131074, -65545, 1, 131074, -65544, 1, 65538, -65543, 1, 131074, -65542, 1, 131074, -65541, 1, 131074, -65540, 1, 2, -65539, 1, 131074, -65538, 1, 131074, -65537, 1, 131074, -131072, 1, 131074, -131071, 1, 131074, -131070, 1, 131074, -131069, 1, 131074, -131068, 1, 131074, -131067, 1, 131074, -131066, 1, 131074, -131065, 1, 131074, -131064, 1, 131074, -131063, 1, 131074, -131062, 1, 131074, -131061, 1, 131074, -131060, 1, 131074, -131059, 1, 131074, -131058, 1, 131073, -131057, 1, 131074, -131056, 1, 131074, -12, 1, 131074, -11, 1, 131074, -10, 1, 131074, -9, 1, 131074, -8, 1, 131074, -7, 1, 131074, -6, 1, 131074, -5, 1, 131074, -4, 1, 131074, -3, 1, 2, -2, 1, 131074, -1, 1, 131074, -65536, 1, 131074, -65535, 1, 131074, -65534, 1, 131074, -65533, 1, 131074, -65532, 1, 131074, -65531, 1, 131074, -65530, 1, 131074, -65529, 1, 131074, -65528, 1, 131074, -65527, 1, 2, -65526, 1, 131074, -65525, 1, 131074, -65524, 1, 131074, -65523, 1, 131074, -65522, 1, 131074, -65521, 1, 131074, -65520, 1, 131074, 65524, 1, 131074, 65525, 1, 131074, 65526, 1, 131074, 65527, 1, 131074, 65528, 1, 65537, 65529, 1, 131074, 65530, 1, 131074, 65531, 1, 131074, 65532, 1, 131074, 65533, 1, 65537, 65534, 1, 1, 65535, 1, 131074, 0, 1, 131074, 1, 1, 131074, 2, 1, 131074, 3, 1, 131074, 4, 1, 131074, 5, 1, 131074, 6, 1, 131074, 7, 1, 131074, 8, 1, 65537, 9, 1, 131074, 10, 1, 131074, 11, 1, 2, 12, 1, 65538, 13, 1, 131074, 14, 1, 131074, 15, 1, 131074, 16, 1, 131074, 131060, 1, 131074, 131061, 1, 131074, 131062, 1, 131074, 131063, 1, 131073, 131064, 1, 131074, 131065, 1, 1, 131066, 1, 131074, 131067, 1, 131074, 131068, 1, 131074, 131069, 1, 65538, 131070, 1, 131074, 131071, 1, 131074, 65536, 1, 65537, 65537, 1, 131074, 65538, 1, 131074, 65539, 1, 131074, 65540, 1, 131074, 65541, 1, 131074, 65542, 1, 131074, 65543, 1, 131074, 65544, 1, 131074, 65545, 1, 131074, 65546, 1, 131074, 65547, 1, 131073, 65548, 1, 131074, 65549, 1, 131074, 65550, 1, 131074, 65551, 1, 131074, 65552, 1, 65536, 196596, 1, 65538, 196597, 1, 131074, 196598, 1, 131074, 196599, 1, 131074, 196600, 1, 131074, 196601, 1, 131074, 196602, 1, 131074, 196603, 1, 131074, 196604, 1, 131074, 196605, 1, 131074, 196606, 1, 65538, 196607, 1, 65538, 131072, 1, 131074, 131073, 1, 131074, 131074, 1, 131074, 131075, 1, 131074, 131076, 1, 131074, 131077, 1, 131074, 131078, 1, 2, 131079, 1, 131074, 131080, 1, 131074, 131081, 1, 131074, 131082, 1, 131074, 131083, 1, 131074, 131084, 1, 131074, 131085, 1, 131074, 131086, 1, 2, 131087, 1, 65536, 131088, 1, 131074, 262132, 1, 131074, 262133, 1, 131074, 262134, 1, 131074, 262135, 1, 131074, 262136, 1, 131074, 262137, 1, 131074, 262138, 1, 131074, 262139, 1, 131074, 262140, 1, 131074, 262141, 1, 65536, 262142, 1, 131074, 262143, 1, 131074, 196608, 1, 131074, 196609, 1, 0, 196610, 1, 131074, 196611, 1, 131074, 196612, 1, 131074, 196613, 1, 131074, 196614, 1, 131074, 196615, 1, 65536, 196616, 1, 131074, 196617, 1, 131074, 196618, 1, 131074, 196619, 1, 131074, 196620, 1, 131074, 196621, 1, 131074, 196622, 1, 131072, 196623, 1, 131074, 196624, 1, 131074, 327668, 1, 131074, 327669, 1, 131074, 327670, 1, 131074, 327671, 1, 131074, 327672, 1, 131074, 327673, 1, 131074, 327674, 1, 131074, 327675, 1, 131074, 327676, 1, 131074, 327677, 1, 65538, 327678, 1, 131074, 327679, 1, 131074, 262144, 1, 131074, 262145, 1, 65537, 262146, 1, 131074, 262147, 1, 131074, 262148, 1, 131074, 262149, 1, 65538, 262150, 1, 131074, 262151, 1, 131072, 262152, 1, 131072, 262153, 1, 131074, 262154, 1, 131074, 262155, 1, 1, 262156, 1, 131074, 262157, 1, 131074, 262158, 1, 131074, 262159, 1, 131074, 262160, 1, 131074, 393204, 1, 131074, 393205, 1, 131074, 393206, 1, 131074, 393207, 1, 65537, 393208, 1, 131074, 393209, 1, 2, 393210, 1, 131074, 393211, 1, 131074, 393212, 1, 131074, 393213, 1, 131073, 393214, 1, 131074, 393215, 1, 131074, 327680, 1, 131074, 327681, 1, 131074, 327682, 1, 131074, 327683, 1, 131074, 327684, 1, 131074, 327685, 1, 131073, 327686, 1, 0, 327687, 1, 131074, 327688, 1, 131074, 327689, 1, 131074, 327690, 1, 131074, 327691, 1, 131074, 327692, 1, 131074, 327693, 1, 131074, 327694, 1, 131074, 327695, 1, 131072, 327696, 1, 131074, 458740, 1, 131074, 458741, 1, 131074, 458742, 1, 131074, 458743, 1, 131074, 458744, 1, 65536, 458745, 1, 65537, 458746, 1, 131074, 458747, 1, 131074, 458748, 1, 131074, 458749, 1, 131074, 458750, 1, 131074, 458751, 1, 131074, 393216, 1, 131074, 393217, 1, 131074, 393218, 1, 131074, 393219, 1, 2, 393220, 1, 131074, 393221, 1, 131074, 393222, 1, 131074, 393223, 1, 65536, 393224, 1, 131074, 393225, 1, 131074, 393226, 1, 131074, 393227, 1, 131074, 393228, 1, 131074, 393229, 1, 131074, 393230, 1, 131074, 393231, 1, 131074, 393232, 1, 131074, 524276, 1, 131074, 524277, 1, 65538, 524278, 1, 131074, 524279, 1, 131074, 524280, 1, 65538, 524281, 1, 0, 524282, 1, 1, 524283, 1, 131074, 524284, 1, 131074, 524285, 1, 2, 524286, 1, 131074, 524287, 1, 131074, 458752, 1, 65538, 458753, 1, 131074, 458754, 1, 131074, 458755, 1, 131074, 458756, 1, 131074, 458757, 1, 131074, 458758, 1, 131074, 458759, 1, 65538, 458760, 1, 131074, 458761, 1, 131074, 458762, 1, 131074, 458763, 1, 131074, 458764, 1, 131074, 458765, 1, 131073, 458766, 1, 131074, 458767, 1, 131073, 458768, 1, 131074, 589812, 1, 131074, 589813, 1, 131074, 589814, 1, 131074, 589815, 1, 131074, 589816, 1, 131074, 589817, 1, 131074, 589818, 1, 131074, 589819, 1, 131074, 589820, 1, 131074, 589821, 1, 131074, 589822, 1, 131074, 589823, 1, 131074, 524288, 1, 131074, 524289, 1, 131074, 524290, 1, 131074, 524291, 1, 131074, 524292, 1, 131074, 524293, 1, 131074, 524294, 1, 1, 524295, 1, 131074, 524296, 1, 131074, 524297, 1, 131072, 524298, 1, 131074, 524299, 1, 131074, 524300, 1, 131074, 524301, 1, 131074, 524302, 1, 131074, 524303, 1, 131074, 524304, 1, 131074, 655348, 1, 131074, 655349, 1, 131074, 655350, 1, 131074, 655351, 1, 131074, 655352, 1, 131074, 655353, 1, 131074, 655354, 1, 131074, 655355, 1, 65537, 655356, 1, 131074, 655357, 1, 131074, 655358, 1, 2, 655359, 1, 131074, 589824, 1, 131074, 589825, 1, 131074, 589826, 1, 131074, 589827, 1, 131074, 589828, 1, 0, 589829, 1, 131074, 589830, 1, 131074, 589831, 1, 131074, 589832, 1, 131073, 589833, 1, 131074, 589834, 1, 131074, 589835, 1, 131074, 589836, 1, 131074, 589837, 1, 131074, 589838, 1, 131074, 589839, 1, 131074, 589840, 1, 131074, 720884, 1, 131074, 720885, 1, 2, 720886, 1, 131074, 720887, 1, 131074, 720888, 1, 131074, 720889, 1, 131074, 720890, 1, 131074, 720891, 1, 0, 720892, 1, 131073, 720893, 1, 131074, 720894, 1, 131074, 720895, 1, 131074, 655360, 1, 131074, 655361, 1, 131074, 655362, 1, 131074, 655363, 1, 131074, 655364, 1, 131074, 655365, 1, 131074, 655366, 1, 131074, 655367, 1, 131074, 655368, 1, 131074, 655369, 1, 131074, 655370, 1, 65538, 655371, 1, 131074, 655372, 1, 65538, 655373, 1, 131074, 655374, 1, 131074, 655375, 1, 131073, 655376, 1, 131074, 786420, 1, 131074, 786421, 1, 131074, 786422, 1, 65537, 786423, 1, 131074, 786424, 1, 131074, 786425, 1, 131074, 786426, 1, 131074, 786427, 1, 131074, 786428, 1, 131074, 786429, 1, 65538, 786430, 1, 0, 786431, 1, 131074, 720896, 1, 131074, 720897, 1, 131074, 720898, 1, 65537, 720899, 1, 131072, 720900, 1, 2, 720901, 1, 131074, 720902, 1, 131073, 720903, 1, 131074, 720904, 1, 131074, 720905, 1, 131074, 720906, 1, 131074, 720907, 1, 131074, 720908, 1, 131074, 720909, 1, 131074, 720910, 1, 131074, 720911, 1, 131074, 720912, 1, 131074, 851956, 1, 2, 851957, 1, 131074, 851958, 1, 131074, 851959, 1, 131074, 851960, 1, 131074, 851961, 1, 131074, 851962, 1, 131074, 851963, 1, 131074, 851964, 1, 131074, 851965, 1, 2, 851966, 1, 131074, 851967, 1, 131074, 786432, 1, 131074, 786433, 1, 131074, 786434, 1, 131074, 786435, 1, 131074, 786436, 1, 131074, 786437, 1, 65537, 786438, 1, 131074, 786439, 1, 131074, 786440, 1, 131074, 786441, 1, 65538, 786442, 1, 1, 786443, 1, 131074, 786444, 1, 131074, 786445, 1, 131074, 786446, 1, 1, 786447, 1, 131074, 786448, 1, 0, 917492, 1, 131074, 917493, 1, 131074, 917494, 1, 131072, 917495, 1, 131074, 917496, 1, 131072, 917497, 1, 131074, 917498, 1, 131074, 917499, 1, 131074, 917500, 1, 131074, 917501, 1, 131072, 917502, 1, 131074, 917503, 1, 131074, 851968, 1, 131074, 851969, 1, 131074, 851970, 1, 131074, 851971, 1, 131074, 851972, 1, 131074, 851973, 1, 131074, 851974, 1, 131074, 851975, 1, 131074, 851976, 1, 131074, 851977, 1, 0, 851978, 1, 131074, 851979, 1, 131074, 851980, 1, 65536, 851981, 1, 131073, 851982, 1, 131074, 851983, 1, 131074, 851984, 1, 131074 )
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 0, 6 )
+scale = Vector2( 1.15625, 0.770492 )
+frames = SubResource( 73 )
+animation = "New Anim"
+frame = 1
+playing = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
@@ -41,6 +126,7 @@ margin_right = 128.0
 margin_bottom = -56.0
 theme = ExtResource( 6 )
 custom_styles/panel = ExtResource( 5 )
+script = ExtResource( 7 )
 
 [node name="MarginContainer" type="MarginContainer" parent="Camera2D/MenuDialogue"]
 margin_left = 16.0
@@ -50,130 +136,103 @@ margin_bottom = 40.0
 
 [node name="MenuBox" type="GridContainer" parent="Camera2D/MenuDialogue/MarginContainer"]
 margin_right = 232.0
-margin_bottom = 36.0
+margin_bottom = 40.0
 grow_horizontal = 2
 grow_vertical = 2
 focus_mode = 2
 columns = 3
-script = ExtResource( 7 )
 
-[node name="Fight" parent="Camera2D/MenuDialogue/MarginContainer/MenuBox" instance=ExtResource( 3 )]
+[node name="Attack" parent="Camera2D/MenuDialogue/MarginContainer/MenuBox" instance=ExtResource( 3 )]
 margin_right = 74.0
 focus_neighbour_left = NodePath("../Items")
 focus_neighbour_top = NodePath("../Status")
 focus_neighbour_right = NodePath("../Powers")
 focus_neighbour_bottom = NodePath("../Status")
-focus_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-selected = true
-
-[node name="OptionArrow" parent="Camera2D/MenuDialogue/MarginContainer/MenuBox/Fight" index="0"]
-frame = 0
+text = "Fight"
 
 [node name="Powers" parent="Camera2D/MenuDialogue/MarginContainer/MenuBox" instance=ExtResource( 3 )]
 margin_left = 78.0
 margin_right = 152.0
-focus_neighbour_left = NodePath("../Fight")
+focus_neighbour_left = NodePath("../Attack")
 focus_neighbour_top = NodePath("../Examine")
 focus_neighbour_right = NodePath("../Items")
 focus_neighbour_bottom = NodePath("../Examine")
-focus_mode = 2
 text = "Powers"
-
-[node name="OptionArrow" parent="Camera2D/MenuDialogue/MarginContainer/MenuBox/Powers" index="0"]
-frame = 0
 
 [node name="Items" parent="Camera2D/MenuDialogue/MarginContainer/MenuBox" instance=ExtResource( 3 )]
 margin_left = 156.0
 margin_right = 230.0
 focus_neighbour_left = NodePath("../Powers")
 focus_neighbour_top = NodePath("../Run")
-focus_neighbour_right = NodePath("../Fight")
+focus_neighbour_right = NodePath("../Attack")
 focus_neighbour_bottom = NodePath("../Run")
-focus_mode = 2
 text = "Items"
 
-[node name="OptionArrow" parent="Camera2D/MenuDialogue/MarginContainer/MenuBox/Items" index="0"]
-frame = 0
-
 [node name="Status" parent="Camera2D/MenuDialogue/MarginContainer/MenuBox" instance=ExtResource( 3 )]
-margin_top = 20.0
+margin_top = 22.0
 margin_right = 74.0
-margin_bottom = 36.0
+margin_bottom = 40.0
 focus_neighbour_left = NodePath("../Run")
-focus_neighbour_top = NodePath("../Fight")
+focus_neighbour_top = NodePath("../Attack")
 focus_neighbour_right = NodePath("../Examine")
-focus_neighbour_bottom = NodePath("../Fight")
-focus_mode = 2
+focus_neighbour_bottom = NodePath("../Attack")
 text = "Status"
-
-[node name="OptionArrow" parent="Camera2D/MenuDialogue/MarginContainer/MenuBox/Status" index="0"]
-frame = 0
 
 [node name="Examine" parent="Camera2D/MenuDialogue/MarginContainer/MenuBox" instance=ExtResource( 3 )]
 margin_left = 78.0
-margin_top = 20.0
+margin_top = 22.0
 margin_right = 152.0
-margin_bottom = 36.0
+margin_bottom = 40.0
 focus_neighbour_left = NodePath("../Status")
 focus_neighbour_top = NodePath("../Powers")
 focus_neighbour_right = NodePath("../Run")
 focus_neighbour_bottom = NodePath("../Powers")
-focus_mode = 2
 text = "Examine"
-
-[node name="OptionArrow" parent="Camera2D/MenuDialogue/MarginContainer/MenuBox/Examine" index="0"]
-frame = 0
 
 [node name="Run" parent="Camera2D/MenuDialogue/MarginContainer/MenuBox" instance=ExtResource( 3 )]
 margin_left = 156.0
-margin_top = 20.0
+margin_top = 22.0
 margin_right = 230.0
-margin_bottom = 36.0
+margin_bottom = 40.0
 focus_neighbour_left = NodePath("../Examine")
 focus_neighbour_top = NodePath("../Items")
 focus_neighbour_right = NodePath("../Status")
 focus_neighbour_bottom = NodePath("../Items")
-focus_mode = 2
 text = "Run"
 
-[node name="OptionArrow" parent="Camera2D/MenuDialogue/MarginContainer/MenuBox/Run" index="0"]
-frame = 0
-
-[node name="BoJanglesPanel" parent="Camera2D" instance=ExtResource( 4 )]
-anchor_top = 1.0
-anchor_bottom = 1.0
+[node name="CharacterPanels" type="Control" parent="Camera2D"]
 margin_left = -128.0
 margin_top = 95.0
-margin_right = -64.0
-margin_bottom = 183.0
+margin_right = -88.0
+margin_bottom = 135.0
 
-[node name="MoJanglesPanel" parent="Camera2D" instance=ExtResource( 4 )]
-margin_left = -64.0
-margin_top = 95.0
-margin_right = 0.0
-margin_bottom = 183.0
-inputKey = 1
+[node name="BoJanglesPanel" parent="Camera2D/CharacterPanels" instance=ExtResource( 4 )]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_top = -40.0
+margin_bottom = 48.0
+focus_neighbour_left = NodePath("../TemPanel")
+focus_neighbour_right = NodePath("../MoJanglesPanel")
+focus_mode = 2
+checkStats = true
+
+[node name="MoJanglesPanel" parent="Camera2D/CharacterPanels" instance=ExtResource( 4 )]
+margin_left = 64.0
+margin_right = 128.0
+focus_neighbour_left = NodePath("../BoJanglesPanel")
+focus_neighbour_right = NodePath("../JoBanglesPanel")
 Char = "Char2"
 
-[node name="JoBanglesPanel" parent="Camera2D" instance=ExtResource( 4 )]
-margin_top = 95.0
-margin_bottom = 183.0
-inputKey = 2
+[node name="JoBanglesPanel" parent="Camera2D/CharacterPanels" instance=ExtResource( 4 )]
+margin_left = 128.0
+margin_right = 192.0
+focus_neighbour_left = NodePath("../MoJanglesPanel")
+focus_neighbour_right = NodePath("../TemPanel")
 Char = "Char3"
 
-[node name="TemPanel" parent="Camera2D" instance=ExtResource( 4 )]
-margin_left = 64.0
-margin_top = 95.0
-margin_right = 128.0
-margin_bottom = 183.0
-inputKey = 3
+[node name="TemPanel" parent="Camera2D/CharacterPanels" instance=ExtResource( 4 )]
+margin_left = 192.0
+margin_right = 256.0
+focus_neighbour_left = NodePath("../JoBanglesPanel")
+focus_neighbour_right = NodePath("../BoJanglesPanel")
 Char = "Char4"
-
-[editable path="Camera2D/MenuDialogue/MarginContainer/MenuBox/Fight"]
-[editable path="Camera2D/MenuDialogue/MarginContainer/MenuBox/Powers"]
-[editable path="Camera2D/MenuDialogue/MarginContainer/MenuBox/Items"]
-[editable path="Camera2D/MenuDialogue/MarginContainer/MenuBox/Status"]
-[editable path="Camera2D/MenuDialogue/MarginContainer/MenuBox/Examine"]
-[editable path="Camera2D/MenuDialogue/MarginContainer/MenuBox/Run"]

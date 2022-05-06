@@ -1,11 +1,10 @@
 extends Node
 
-export(bool) var PrintFlag = false
 export(String) var Name = "BoJangles"
 export(String, "Bitchin'", "Groovy", "Gnarly", "Tubular", "Paralyzed", "Sleep", "Bleeding", "On fire!", "Slow", "Weak", "Drained", "Hyper", "Buff", "Energized", "Sturdy", "Flimsy") var Condition = "Bitchin'" setget _status
 export(float, 1, 50, 1) var level = 1 setget _levelUp
 export(float, 5, 20, 1) var baseHP = 10
-export(float, 5, 20, 1) var baseEP = 10
+export(float, 0, 20, 1) var baseEP = 10
 export(float, 5, 8, 0.5) var baseATT = 8
 export(float, 5, 8, 0.5) var baseDEF = 7
 export(float, 5, 8, 0.5) var basePOW = 6

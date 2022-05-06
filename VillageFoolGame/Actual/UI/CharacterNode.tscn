@@ -37,15 +37,17 @@ margin_right = 60.0
 margin_bottom = 16.0
 custom_fonts/font = ExtResource( 1 )
 text = "333333/999999"
-align = 2
+align = 1
 valign = 1
 
 [node name="EPVal" type="Label" parent="."]
 margin_left = 11.0
 margin_top = 15.0
+margin_right = 60.0
+margin_bottom = 16.0
 custom_fonts/font = ExtResource( 1 )
 text = "777777/777777"
-align = 2
+align = 1
 valign = 1
 
 [node name="EP" type="Label" parent="."]

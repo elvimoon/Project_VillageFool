@@ -95,7 +95,7 @@ position = Vector2( 0, 6 )
 scale = Vector2( 1.15625, 0.770492 )
 frames = SubResource( 73 )
 animation = "New Anim"
-frame = 1
+frame = 13
 playing = true
 
 [node name="Camera2D" type="Camera2D" parent="."]

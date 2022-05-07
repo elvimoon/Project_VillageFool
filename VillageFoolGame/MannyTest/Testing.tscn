@@ -1,7 +1,6 @@
-[gd_scene load_steps=58 format=2]
+[gd_scene load_steps=57 format=2]
 
 [ext_resource path="res://Actual/Entities/World Objects/ForestClusterV.tscn" type="PackedScene" id=1]
-[ext_resource path="res://MannyTest/CombatSceneTest.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Actual/Utilities/TileMap Sets/GrassFloor.tscn" type="PackedScene" id=3]
 [ext_resource path="res://MannyTest/DirtPathTileset.png" type="Texture" id=4]
 [ext_resource path="res://Actual/Entities/Players/Player.tscn" type="PackedScene" id=5]
@@ -536,13 +535,3 @@ position = Vector2( 40, -24 )
 
 [node name="ForestClusterH2" parent="WorldSort" instance=ExtResource( 6 )]
 position = Vector2( -248, -24 )
-
-[node name="BattleScene" parent="." instance=ExtResource( 2 )]
-
-[node name="AnimatedSprite" parent="BattleScene" index="0"]
-frame = 0
-
-[node name="Camera2D" parent="BattleScene" index="1"]
-current = false
-
-[editable path="BattleScene"]

@@ -1,0 +1,98 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://MannyTest/Player.tscn" type="PackedScene" id=1]
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id=2]
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id=3]
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id=4]
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id=5]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 89.5, 11 )
+
+[node name="MannyTestScene" type="Node"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 240, 136 )
+current = true
+
+[node name="Player" parent="Camera2D" instance=ExtResource( 1 )]
+position = Vector2( 48, -64 )
+Gravity = 20.0
+MaxSpeed = 200
+Acceleration = 100
+Friction = 10
+JumpPower = 550.0
+
+[node name="Collider" parent="Camera2D/Player/Joseph" index="0"]
+disabled = true
+
+[node name="StateTree" parent="Camera2D/Player/Joseph" index="5"]
+parameters/playback = SubResource( 2 )
+
+[node name="StateTree" parent="Camera2D/Player/Arthur" index="5"]
+parameters/playback = SubResource( 3 )
+
+[node name="StateTree" parent="Camera2D/Player/Emily" index="5"]
+parameters/playback = SubResource( 4 )
+
+[node name="StateTree" parent="Camera2D/Player/Reynauld" index="5"]
+parameters/playback = SubResource( 5 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2( 92, 208 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource( 1 )
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+position = Vector2( 276, 192 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+shape = SubResource( 1 )
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="."]
+position = Vector2( 460, 240 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
+shape = SubResource( 1 )
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="."]
+position = Vector2( 12, 108 )
+rotation = 1.57079
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4"]
+position = Vector2( -1.5, -1 )
+shape = SubResource( 1 )
+
+[node name="StaticBody2D5" type="StaticBody2D" parent="."]
+position = Vector2( 468, 140 )
+rotation = 1.57079
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D5"]
+position = Vector2( -1.5, -1 )
+shape = SubResource( 1 )
+
+[editable path="Camera2D/Player"]
+[editable path="Camera2D/Player/Joseph"]
+[editable path="Camera2D/Player/Arthur"]
+[editable path="Camera2D/Player/Emily"]
+[editable path="Camera2D/Player/Reynauld"]

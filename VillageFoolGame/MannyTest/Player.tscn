@@ -1,0 +1,87 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://MannyTest/Player.gd" type="Script" id=1]
+[ext_resource path="res://Actual/Utilities/Stat Systems/ReynStats.tscn" type="PackedScene" id=2]
+[ext_resource path="res://icon.png" type="Texture" id=3]
+[ext_resource path="res://Actual/Utilities/Stat Systems/ArthurStats.tscn" type="PackedScene" id=4]
+[ext_resource path="res://MannyTest/Character.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Actual/Utilities/Stat Systems/EmilyStats.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Actual/Utilities/Stat Systems/JosephStats.tscn" type="PackedScene" id=7]
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 32, 32 )
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id=1]
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id=2]
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id=3]
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id=4]
+
+[node name="Player" type="KinematicBody2D"]
+script = ExtResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 5 )
+
+[node name="Joseph" parent="." instance=ExtResource( 5 )]
+
+[node name="Collider" parent="Joseph" index="0"]
+polygon = PoolVector2Array( -32, -32, 32, -32, 32, 32, -32, 32 )
+
+[node name="Sprite" parent="Joseph" index="3"]
+modulate = Color( 0, 0.329412, 0.717647, 1 )
+texture = ExtResource( 3 )
+
+[node name="StateTree" parent="Joseph" index="5"]
+parameters/playback = SubResource( 1 )
+
+[node name="JosephStats" parent="Joseph" instance=ExtResource( 7 )]
+
+[node name="Arthur" parent="." instance=ExtResource( 5 )]
+
+[node name="Collider" parent="Arthur" index="0"]
+disabled = true
+
+[node name="Sprite" parent="Arthur" index="3"]
+modulate = Color( 0.913725, 0, 0, 1 )
+texture = ExtResource( 3 )
+
+[node name="StateTree" parent="Arthur" index="5"]
+parameters/playback = SubResource( 2 )
+
+[node name="ArthurStats" parent="Arthur" instance=ExtResource( 4 )]
+
+[node name="Emily" parent="." instance=ExtResource( 5 )]
+
+[node name="Collider" parent="Emily" index="0"]
+disabled = true
+
+[node name="Sprite" parent="Emily" index="3"]
+modulate = Color( 0.164706, 0.760784, 0, 1 )
+texture = ExtResource( 3 )
+
+[node name="StateTree" parent="Emily" index="5"]
+parameters/playback = SubResource( 3 )
+
+[node name="EmilyStats" parent="Emily" instance=ExtResource( 6 )]
+
+[node name="Reynauld" parent="." instance=ExtResource( 5 )]
+
+[node name="Collider" parent="Reynauld" index="0"]
+disabled = true
+
+[node name="Sprite" parent="Reynauld" index="3"]
+modulate = Color( 0.301961, 0.301961, 0.301961, 1 )
+texture = ExtResource( 3 )
+
+[node name="StateTree" parent="Reynauld" index="5"]
+parameters/playback = SubResource( 4 )
+
+[node name="ReynStats" parent="Reynauld" instance=ExtResource( 2 )]
+
+[editable path="Joseph"]
+[editable path="Arthur"]
+[editable path="Emily"]
+[editable path="Reynauld"]

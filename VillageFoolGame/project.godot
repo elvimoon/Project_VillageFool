@@ -11,18 +11,13 @@ config_version=4
 [application]
 
 config/name="Village Fool Game"
-run/main_scene="res://MannyTest/Testing.tscn"
+run/main_scene="res://MannyTest/MannyTestScene.tscn"
 run/delta_sync_after_draw=true
 config/icon="res://icon.png"
 
 [autoload]
 
-Character1Stats="*res://Actual/Utilities/Stat Systems/Character1Stats.tscn"
 Settings="*res://Actual/Scenes/SettingsObject.tscn"
-Character2Stats="*res://Actual/Utilities/Stat Systems/Character2Stats.tscn"
-Character3Stats="*res://Actual/Utilities/Stat Systems/Character3Stats.tscn"
-Character4Stats="*res://Actual/Utilities/Stat Systems/Character4Stats.tscn"
-BattleController="*res://Actual/Utilities/Mechanics/BattleController.tscn"
 
 [debug]
 
@@ -172,11 +167,14 @@ right={
 
 [layer_names]
 
-2d_physics/layer_1="World Object"
-2d_physics/layer_2="Soft Object"
-2d_physics/layer_3="Player"
-2d_physics/layer_4="Enemy"
-2d_physics/layer_5="EventTrigger"
+2d_physics/layer_1="WorldSolid"
+2d_physics/layer_2="PlayerCollider"
+2d_physics/layer_3="EnemyCollider"
+2d_physics/layer_4="PlayerHitBox"
+2d_physics/layer_5="PlayerHurtBox"
+2d_physics/layer_6="EnemyHitBox"
+2d_physics/layer_7="EnemyHurtBox"
+2d_physics/layer_8="EventCollider"
 
 [physics]
 

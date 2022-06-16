@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://MannyTest/Player.tscn" type="PackedScene" id=1]
-[ext_resource path="res://MannyTest/TestTile.tscn" type="PackedScene" id=2]
+[ext_resource path="res://MannyTest/Overworld.tscn" type="PackedScene" id=2]
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=2]
 
@@ -14,7 +14,10 @@
 [node name="MannyTestScene" type="Node"]
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 360, -112 )
+position = Vector2( 480, -992 )
+
+[node name="CollisionShape2D" parent="Player" index="0"]
+position = Vector2( 0, 3 )
 
 [node name="Collider" parent="Player/Joseph" index="0"]
 disabled = true
@@ -22,11 +25,20 @@ disabled = true
 [node name="StateTree" parent="Player/Joseph" index="5"]
 parameters/playback = SubResource( 2 )
 
+[node name="BulletPivot" parent="Player/Joseph" index="7"]
+position = Vector2( 40, 0 )
+
 [node name="StateTree" parent="Player/Arthur" index="5"]
 parameters/playback = SubResource( 3 )
 
 [node name="StateTree" parent="Player/Emily" index="5"]
 parameters/playback = SubResource( 4 )
+
+[node name="HoverTimer" parent="Player/Emily" index="7"]
+wait_time = 2.0
+
+[node name="Sprite" parent="Player/Reynauld" index="3"]
+position = Vector2( 9.53674e-07, 9.53674e-07 )
 
 [node name="StateTree" parent="Player/Reynauld" index="5"]
 parameters/playback = SubResource( 5 )
@@ -35,229 +47,7 @@ parameters/playback = SubResource( 5 )
 current = true
 smoothing_enabled = true
 
-[node name="TestArea" type="Node" parent="."]
-
-[node name="TestTile" parent="TestArea" instance=ExtResource( 2 )]
-position = Vector2( 324, 240 )
-
-[node name="TestTile30" parent="TestArea" instance=ExtResource( 2 )]
-position = Vector2( 292, 240 )
-
-[node name="TestTile31" parent="TestArea" instance=ExtResource( 2 )]
-position = Vector2( 260, 240 )
-
-[node name="TestTile32" parent="TestArea" instance=ExtResource( 2 )]
-position = Vector2( 228, 240 )
-
-[node name="TestTile33" parent="TestArea" instance=ExtResource( 2 )]
-position = Vector2( 196, 240 )
-
-[node name="TestTile34" parent="TestArea" instance=ExtResource( 2 )]
-position = Vector2( 164, 240 )
-
-[node name="TestTile35" parent="TestArea" instance=ExtResource( 2 )]
-position = Vector2( 132, 240 )
-
-[node name="TestTile36" parent="TestArea" instance=ExtResource( 2 )]
-position = Vector2( 100, 240 )
-
-[node name="TestTile37" parent="TestArea" instance=ExtResource( 2 )]
-position = Vector2( 68, 240 )
-
-[node name="TestTile38" parent="TestArea" instance=ExtResource( 2 )]
-position = Vector2( 36, 240 )
-
-[node name="TestTile39" parent="TestArea" instance=ExtResource( 2 )]
-position = Vector2( 4, 240 )
-
-[node name="TestTile40" parent="TestArea" instance=ExtResource( 2 )]
-position = Vector2( -28, 240 )
-
-[node name="TestTile41" parent="TestArea" instance=ExtResource( 2 )]
-position = Vector2( -28, 208 )
-
-[node name="TestTile42" parent="TestArea" instance=ExtResource( 2 )]
-position = Vector2( -28, 176 )
-
-[node name="TestTile43" parent="TestArea" instance=ExtResource( 2 )]
-position = Vector2( -28, 144 )
-
-[node name="TestTile44" parent="TestArea" instance=ExtResource( 2 )]
-position = Vector2( -28, 112 )
-
-[node name="TestTile45" parent="TestArea" instance=ExtResource( 2 )]
-position = Vector2( -28, 80 )
-
-[node name="TestTile46" parent="TestArea" instance=ExtResource( 2 )]
-position = Vector2( -28, 48 )
-
-[node name="TestTile47" parent="TestArea" instance=ExtResource( 2 )]
-position = Vector2( -28, 16 )
-
-[node name="TestTile48" parent="TestArea" instance=ExtResource( 2 )]
-position = Vector2( -28, -16 )
-
-[node name="TestTile49" parent="TestArea" instance=ExtResource( 2 )]
-position = Vector2( -28, -48 )
-
-[node name="TestTile50" parent="TestArea" instance=ExtResource( 2 )]
-position = Vector2( -28, -80 )
-
-[node name="TestTile2" parent="TestArea" instance=ExtResource( 2 )]
-position = Vector2( 356, 240 )
-
-[node name="TestTile3" parent="TestArea" instance=ExtResource( 2 )]
-position = Vector2( 388, 240 )
-
-[node name="TestTile4" parent="TestArea" instance=ExtResource( 2 )]
-position = Vector2( 420, 240 )
-
-[node name="TestTile5" parent="TestArea" instance=ExtResource( 2 )]
-position = Vector2( 452, 240 )
-
-[node name="TestTile6" parent="TestArea" instance=ExtResource( 2 )]
-position = Vector2( 484, 240 )
-
-[node name="TestTile7" parent="TestArea" instance=ExtResource( 2 )]
-position = Vector2( 516, 240 )
-
-[node name="TestTile8" parent="TestArea" instance=ExtResource( 2 )]
-position = Vector2( 548, 240 )
-
-[node name="TestTile9" parent="TestArea" instance=ExtResource( 2 )]
-position = Vector2( 580, 240 )
-
-[node name="TestTile10" parent="TestArea" instance=ExtResource( 2 )]
-position = Vector2( 580, 208 )
-
-[node name="TestTile11" parent="TestArea" instance=ExtResource( 2 )]
-position = Vector2( 580, 176 )
-
-[node name="TestTile12" parent="TestArea" instance=ExtResource( 2 )]
-position = Vector2( 580, 144 )
-
-[node name="TestTile13" parent="TestArea" instance=ExtResource( 2 )]
-position = Vector2( 612, 144 )
-
-[node name="TestTile14" parent="TestArea" instance=ExtResource( 2 )]
-position = Vector2( 644, 144 )
-
-[node name="TestTile15" parent="TestArea" instance=ExtResource( 2 )]
-position = Vector2( 644, 112 )
-
-[node name="TestTile16" parent="TestArea" instance=ExtResource( 2 )]
-position = Vector2( 644, 80 )
-
-[node name="TestTile17" parent="TestArea" instance=ExtResource( 2 )]
-position = Vector2( 644, 48 )
-
-[node name="TestTile18" parent="TestArea" instance=ExtResource( 2 )]
-position = Vector2( 644, 16 )
-
-[node name="TestTile19" parent="TestArea" instance=ExtResource( 2 )]
-position = Vector2( 644, -16 )
-
-[node name="TestTile20" parent="TestArea" instance=ExtResource( 2 )]
-position = Vector2( 644, -48 )
-
-[node name="TestTile21" parent="TestArea" instance=ExtResource( 2 )]
-position = Vector2( 644, -80 )
-
-[node name="TestTile22" parent="TestArea" instance=ExtResource( 2 )]
-position = Vector2( 464, 80 )
-
-[node name="TestTile51" parent="TestArea" instance=ExtResource( 2 )]
-position = Vector2( 472, -48 )
-
-[node name="TestTile52" parent="TestArea" instance=ExtResource( 2 )]
-position = Vector2( 472, -80 )
-
-[node name="TestTile53" parent="TestArea" instance=ExtResource( 2 )]
-position = Vector2( 472, -112 )
-
-[node name="TestTile54" parent="TestArea" instance=ExtResource( 2 )]
-position = Vector2( 472, -144 )
-
-[node name="TestTile55" parent="TestArea" instance=ExtResource( 2 )]
-position = Vector2( 472, -176 )
-
-[node name="TestTile56" parent="TestArea" instance=ExtResource( 2 )]
-position = Vector2( 472, -208 )
-
-[node name="TestTile57" parent="TestArea" instance=ExtResource( 2 )]
-position = Vector2( 472, -240 )
-
-[node name="TestTile58" parent="TestArea" instance=ExtResource( 2 )]
-position = Vector2( 472, -272 )
-
-[node name="TestTile59" parent="TestArea" instance=ExtResource( 2 )]
-position = Vector2( 312, -112 )
-
-[node name="TestTile60" parent="TestArea" instance=ExtResource( 2 )]
-position = Vector2( 312, -144 )
-
-[node name="TestTile61" parent="TestArea" instance=ExtResource( 2 )]
-position = Vector2( 312, -176 )
-
-[node name="TestTile62" parent="TestArea" instance=ExtResource( 2 )]
-position = Vector2( 312, -208 )
-
-[node name="TestTile63" parent="TestArea" instance=ExtResource( 2 )]
-position = Vector2( 312, -240 )
-
-[node name="TestTile64" parent="TestArea" instance=ExtResource( 2 )]
-position = Vector2( 312, -272 )
-
-[node name="TestTile65" parent="TestArea" instance=ExtResource( 2 )]
-position = Vector2( 312, -304 )
-
-[node name="TestTile66" parent="TestArea" instance=ExtResource( 2 )]
-position = Vector2( 312, -336 )
-
-[node name="TestTile67" parent="TestArea" instance=ExtResource( 2 )]
-position = Vector2( 312, -368 )
-
-[node name="TestTile68" parent="TestArea" instance=ExtResource( 2 )]
-position = Vector2( 472, -304 )
-
-[node name="TestTile69" parent="TestArea" instance=ExtResource( 2 )]
-position = Vector2( 472, -336 )
-
-[node name="TestTile70" parent="TestArea" instance=ExtResource( 2 )]
-position = Vector2( 472, -368 )
-
-[node name="TestTile71" parent="TestArea" instance=ExtResource( 2 )]
-position = Vector2( 440, -368 )
-
-[node name="TestTile72" parent="TestArea" instance=ExtResource( 2 )]
-position = Vector2( 408, -368 )
-
-[node name="TestTile73" parent="TestArea" instance=ExtResource( 2 )]
-position = Vector2( 376, -368 )
-
-[node name="TestTile74" parent="TestArea" instance=ExtResource( 2 )]
-position = Vector2( 344, -368 )
-
-[node name="TestTile23" parent="TestArea" instance=ExtResource( 2 )]
-position = Vector2( 432, 80 )
-
-[node name="TestTile24" parent="TestArea" instance=ExtResource( 2 )]
-position = Vector2( 400, 80 )
-
-[node name="TestTile25" parent="TestArea" instance=ExtResource( 2 )]
-position = Vector2( 368, 80 )
-
-[node name="TestTile26" parent="TestArea" instance=ExtResource( 2 )]
-position = Vector2( 224, 80 )
-
-[node name="TestTile27" parent="TestArea" instance=ExtResource( 2 )]
-position = Vector2( 192, 80 )
-
-[node name="TestTile28" parent="TestArea" instance=ExtResource( 2 )]
-position = Vector2( 160, 80 )
-
-[node name="TestTile29" parent="TestArea" instance=ExtResource( 2 )]
-position = Vector2( 128, 80 )
+[node name="Overworld" parent="." instance=ExtResource( 2 )]
 
 [editable path="Player"]
 [editable path="Player/Joseph"]

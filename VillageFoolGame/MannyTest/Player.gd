@@ -121,11 +121,13 @@ func updateStates():
 	#ground check
 	if is_on_floor():
 		state[GROUND] = true
+		$Camera.position = $Camera.position.move_toward(Vector2(0,-32), 2)
 		state[AIR] = false
 		state[HOVERED] = false
 		jumps = 2 if state[HAS_SKATES] else 1
 	else: 
 		state[GROUND] = false
+		$Camera.position = $Camera.position.move_toward(Vector2.ZERO, 2)
 		state[AIR] = true
 	checkCharStates()
 func checkCharStates():

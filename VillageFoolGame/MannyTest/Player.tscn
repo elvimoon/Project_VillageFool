@@ -6,7 +6,7 @@
 [ext_resource path="res://MannyTest/Character.tscn" type="PackedScene" id=5]
 
 [sub_resource type="RectangleShape2D" id=5]
-extents = Vector2( 32, 28 )
+extents = Vector2( 18, 28 )
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=1]
 
@@ -89,6 +89,9 @@ parameters/playback = SubResource( 4 )
 [node name="DashTimer" type="Timer" parent="."]
 wait_time = 0.3
 one_shot = true
+
+[node name="Camera" type="RemoteTransform2D" parent="."]
+position = Vector2( 0, -32 )
 
 [connection signal="timeout" from="Emily/HoverTimer" to="." method="_on_HoverTimer_timeout"]
 [connection signal="timeout" from="DashTimer" to="." method="_on_DashTimer_timeout"]

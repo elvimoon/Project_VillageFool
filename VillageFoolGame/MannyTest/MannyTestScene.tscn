@@ -15,12 +15,16 @@
 [node name="MannyTestScene" type="Node"]
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2( 1624, -753 )
+position = Vector2( 1655, -560 )
 current = true
+drag_margin_h_enabled = true
+drag_margin_v_enabled = true
 smoothing_enabled = true
-smoothing_speed = 7.0
-drag_margin_top = 0.5
-editor_draw_limits = true
+smoothing_speed = 10.0
+drag_margin_left = 0.1
+drag_margin_top = 0.77
+drag_margin_right = 0.1
+drag_margin_bottom = 0.21
 editor_draw_drag_margin = true
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="Camera2D"]
@@ -35,7 +39,7 @@ texture = ExtResource( 3 )
 stretch_mode = 5
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 1624, -721 )
+position = Vector2( 1655, -513 )
 
 [node name="CollisionShape2D" parent="Player" index="0"]
 position = Vector2( 0, 3 )

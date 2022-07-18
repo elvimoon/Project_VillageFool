@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/JosephRadial3.png-08e564f6139d9c19a526d01739566c66.stex"
+path="res://.import/RadialEmily.png-7517a288763edb08ffc0ae953b056fa8.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://MannyTest/Players/JosephRadial3.png"
-dest_files=[ "res://.import/JosephRadial3.png-08e564f6139d9c19a526d01739566c66.stex" ]
+source_file="res://MannyTest/Players/RadialEmily.png"
+dest_files=[ "res://.import/RadialEmily.png-7517a288763edb08ffc0ae953b056fa8.stex" ]
 
 [params]
 

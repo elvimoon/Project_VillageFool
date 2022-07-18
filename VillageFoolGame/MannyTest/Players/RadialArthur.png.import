@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/RadialReynHidden.png-64ed518bd758c2730bfdb61b9e139084.stex"
+path="res://.import/RadialArthur.png-681cf8a9876e20ae2669085ee3abd220.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://MannyTest/Players/RadialReynHidden.png"
-dest_files=[ "res://.import/RadialReynHidden.png-64ed518bd758c2730bfdb61b9e139084.stex" ]
+source_file="res://MannyTest/Players/RadialArthur.png"
+dest_files=[ "res://.import/RadialArthur.png-681cf8a9876e20ae2669085ee3abd220.stex" ]
 
 [params]
 

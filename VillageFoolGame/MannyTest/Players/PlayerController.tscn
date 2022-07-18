@@ -1,0 +1,18 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://MannyTest/Players/Reynauld.tscn" type="PackedScene" id=1]
+[ext_resource path="res://MannyTest/Players/Arthur.tscn" type="PackedScene" id=2]
+[ext_resource path="res://MannyTest/Players/Emily.tscn" type="PackedScene" id=3]
+[ext_resource path="res://MannyTest/Players/Joseph.tscn" type="PackedScene" id=4]
+[ext_resource path="res://MannyTest/Players/Switch.gd" type="Script" id=5]
+
+[node name="PlayerController" type="Node"]
+script = ExtResource( 5 )
+
+[node name="Joseph" parent="." instance=ExtResource( 4 )]
+
+[node name="Emily" parent="." instance=ExtResource( 3 )]
+
+[node name="Arthur" parent="." instance=ExtResource( 2 )]
+
+[node name="Reynauld" parent="." instance=ExtResource( 1 )]
